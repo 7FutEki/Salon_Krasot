@@ -1,0 +1,25 @@
+﻿<Window x:Class="Salon_Krasot.Windows_To_Register.Key_Reg_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Salon_Krasot.Windows_To_Register"
+        mc:Ignorable="d"
+         Height="150" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Ключ для регистрации:" Margin="10,16,10,16" FontFamily="Tahoma"/>
+        <TextBox Text="" Name="key_TextBox" Grid.Column="1" Grid.Row="1" Margin="10" FontFamily="Tahoma"/>
+        <Button Content="Продолжить" x:Name="continue_key_btn" Click="continue_key_btn_Click" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Margin="10" FontFamily="Tahoma" Background="#FFFF4A6D"/>
+    </Grid>
+</Window>
