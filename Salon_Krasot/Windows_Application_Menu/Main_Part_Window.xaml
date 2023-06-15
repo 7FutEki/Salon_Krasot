@@ -5,11 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Application_Menu"
         mc:Ignorable="d"
-         Height="450" Width="800">
+         Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="501*"/>
-            <ColumnDefinition Width="299*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -18,11 +17,12 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
+            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Content="←" Width="80" Height="35" Background="#FFFF4A6D" />
             <TextBox Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
             <Button Content="Найти" Width="80" VerticalAlignment="Center"/>
         </StackPanel>
 
-        <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" Grid.ColumnSpan="2" Background="#FFFFE4FF">
+        <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" Grid.ColumnSpan="2" Background="#FFFFE4FF">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3"/>
@@ -45,7 +45,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button  Width="58" Height="40" Margin="231,0,0,0" Grid.Column="1">
+        <Button  Width="58" Height="40" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="0" x:Name="btn_basket" Click="btn_basket_Click">
             <Button.OpacityMask>
                 <ImageBrush ImageSource="/Windows_Application_Menu/Корзина.png" Stretch="UniformToFill" TileMode="None"/>
             </Button.OpacityMask>

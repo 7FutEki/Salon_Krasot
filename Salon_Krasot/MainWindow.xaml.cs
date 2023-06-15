@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Salon_Krasot.Windows_Profiles;
 
 namespace Salon_Krasot
 {
@@ -42,6 +43,7 @@ namespace Salon_Krasot
             Windows_Application_Menu.Main_Part_Window main_Part_Window = new Windows_Application_Menu.Main_Part_Window();
             main_Part_Window.Show();
             this.Close();
+
         }
 
     }

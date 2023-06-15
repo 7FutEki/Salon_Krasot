@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace Salon_Krasot.Windows_To_Register
 {
     /// <summary>
@@ -35,6 +36,10 @@ namespace Salon_Krasot.Windows_To_Register
             else
                 MessageBox.Show("Не верный ключ", "Внимание");
         }
-       
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -12,21 +12,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Salon_Krasot.Windows_Application_Menu;
 
 namespace Salon_Krasot.Windows_Application_Menu
 {
     /// <summary>
-    /// Логика взаимодействия для Main_Part_Window.xaml
+    /// Логика взаимодействия для Basket_Window.xaml
     /// </summary>
-    public partial class Main_Part_Window : Window
+    public partial class Basket_Window : Window
     {
         public ObservableCollection<Product> Products { get; set; }
-        public Main_Part_Window()
+        public Basket_Window()
         {
             InitializeComponent();
             Products = new ObservableCollection<Product>();
-            Katalog_lb.ItemsSource = Products;
+            Basket_lb.ItemsSource = Products;
 
             Products.Add(new Product { Name = "ТЕСТ", Price = 999 });
             Products.Add(new Product { Name = "Тест", Price = 849 });
@@ -36,19 +35,13 @@ namespace Salon_Krasot.Windows_Application_Menu
             Products.Add(new Product { Name = "Снова тестирование", Price = 3132 });
             Products.Add(new Product { Name = "Черт побери, откуда тут взялся туз¿", Price = 3132 });
         }
+
         public class Product
         {
             public string Name { get; set; }
             public double Price { get; set; }
             public string Image { get; set; }
-            
-        }
 
-        private void btn_basket_Click(object sender, RoutedEventArgs e)
-        {
-            Basket_Window basket_Window = new Basket_Window();
-            this.Close();
-            basket_Window.ShowDialog();
         }
     }
 }
