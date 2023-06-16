@@ -34,8 +34,10 @@ namespace Salon_Krasot
         }
         private void reg_user_btn_Click(object sender, RoutedEventArgs e)
         {
-            Windows_To_Register.Reg_User_Window reg_User_Window = new Windows_To_Register.Reg_User_Window();
-            reg_User_Window.Show();
+            //Windows_To_Register.Reg_User_Window reg_User_Window = new Windows_To_Register.Reg_User_Window();
+            //reg_User_Window.Show();
+            Windows_Profiles.User_Profile_Window user_Profile_Window = new User_Profile_Window();
+            user_Profile_Window.Show();
         }
 
         private void continue_btn_Click(object sender, RoutedEventArgs e)

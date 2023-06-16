@@ -36,5 +36,7 @@
                 <ImageBrush ImageSource="/beauty_logo.png"/>
             </Image.OpacityMask>
         </Image>
+        
+        
     </Grid>
 </Window>

@@ -22,7 +22,6 @@
             <TextBlock Text="{Binding Email}" Margin="6" FontFamily="Tahoma" FontSize="20"/>
             <TextBlock Text="{Binding Sex}" Margin="6" FontFamily="Tahoma" FontSize="20"/>
             <Button Content="Редактировать данные" x:Name="btn_edit_data" Click="btn_edit_data_Click" Margin="6,0,0,0"/>
-
         </StackPanel>
         <Button Content="Изменить фотографию" x:Name="btn_edit_image" Click="btn_edit_image_Click" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,160" Width="200" />
 
