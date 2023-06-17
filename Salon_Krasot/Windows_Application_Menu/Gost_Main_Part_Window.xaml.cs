@@ -12,17 +12,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Salon_Krasot.Windows_Application_Menu;
 
 namespace Salon_Krasot.Windows_Application_Menu
 {
     /// <summary>
-    /// Логика взаимодействия для Main_Part_Window.xaml
+    /// Логика взаимодействия для Gost_Main_Part_Window.xaml
     /// </summary>
-    public partial class Main_Part_Window : Window
+    public partial class Gost_Main_Part_Window : Window
     {
         public ObservableCollection<Product> Products { get; set; }
-        public Main_Part_Window()
+        public Gost_Main_Part_Window()
         {
             InitializeComponent();
             Products = new ObservableCollection<Product>();
@@ -41,14 +40,9 @@ namespace Salon_Krasot.Windows_Application_Menu
             public string Name { get; set; }
             public double Price { get; set; }
             public string Image { get; set; }
-            
+
         }
 
-        private void btn_basket_Click(object sender, RoutedEventArgs e)
-        {
-            Basket_Window basket_Window = new Basket_Window();
-            this.Close();
-            basket_Window.ShowDialog();
-        }
+       
     }
 }
