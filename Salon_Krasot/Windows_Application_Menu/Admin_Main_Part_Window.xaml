@@ -17,11 +17,15 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
-            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Content="←" Width="80" Height="35" Background="#FFFF4A6D" />
+            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Width="60" Height="32" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
+                </Button.Background>
+            </Button>
             <TextBox Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
         </StackPanel>
 
-        <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" Grid.ColumnSpan="2" Background="#FFFFE4FF">
+        <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" Grid.ColumnSpan="2" Background="#FFE1E4FF">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3"/>
@@ -47,13 +51,21 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button Grid.Row="0" Width="90" Height="40" HorizontalAlignment="Right" Margin="0,0,10,0" x:Name="btn_profile" Click="btn_profile_Click" Content="Профиль"/>
-        <Button Grid.Row="0" Width="130" Height="40" HorizontalAlignment="Right" Margin="0,0,110,0" x:Name="btn_story" Click="btn_story_Click" Content="История продаж"/>
+        <Button Grid.Row="0" Width="60" Height="32" HorizontalAlignment="Right" Margin="0,0,10,0" x:Name="btn_profile" Click="btn_profile_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="/Windows_Application_Menu/профиль.png"/>
+            </Button.Background>
+        </Button>
+        <Button Width="60" Height="32" Margin="665,0,0,0" x:Name="btn_story" Click="btn_story_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="/Windows_Application_Menu/история.png"/>
+            </Button.Background>
+        </Button>
 
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
             <Button Width="120" Height="40"  HorizontalAlignment="Center" Content="Выбрать товар" Margin="0,0,10,0" x:Name="btn_choose" Click="btn_choose_Click" Background="#FFFF4A6D" FontFamily="Tahoma" />
             <Button Width="120" Height="40"  HorizontalAlignment="Center" Content="Добавить товар" x:Name="btn_add" Click="btn_add_Click"  FontFamily="Tahoma" />
-            
+
         </StackPanel>
 
 

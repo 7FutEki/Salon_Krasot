@@ -5,39 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Profiles"
         mc:Ignorable="d"
-        Title="Admin_Profile_Window" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Admin_Profile_Window" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Image Width="200" Height="200" Source="C:\Users\User\Desktop\Salon_Krasot-master\Salon_Krasot\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Grid.Column="0"/>
+        <Image Width="200" Height="200" Source="C:\Users\User\Desktop\Salon_Krasot-master\Salon_Krasot\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,0,100" Grid.Column="0"/>
         <ScrollViewer Grid.Column="1">
             <StackPanel Grid.Column="1" >
             <TextBlock Text="Мои данные" FontSize="20" FontFamily="Tahoma" Margin="6,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Surname}" FontFamily="Tahoma" FontSize="20" Height="40"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
+                <TextBlock Text="{Binding Surname}" FontFamily="Tahoma" FontSize="20" Height="40" Background="#FFE1E4FF" OpacityMask="Black"/>
             </Border>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Name}" FontFamily="Tahoma" FontSize="20"  Height="40"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40" Background="Black">
+                <TextBlock Text="{Binding Name}" FontFamily="Tahoma" FontSize="20"  Height="40" Background="#FFE1E4FF"/>
             </Border>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Patronymic}" FontFamily="Tahoma" FontSize="20"  Height="40"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40" Background="Black">
+                <TextBlock Text="{Binding Patronymic}" FontFamily="Tahoma" FontSize="20"  Height="40" Background="#FFE1E4FF"/>
             </Border>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Passport}" FontFamily="Tahoma" FontSize="20"  Height="40"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40" Background="Black">
+                <TextBlock Text="{Binding Passport}" FontFamily="Tahoma" FontSize="20"  Height="40" Background="#FFE1E4FF"/>
             </Border>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding DivCode}" FontFamily="Tahoma" FontSize="20"   Height="40"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40" Background="Black">
+                <TextBlock Text="{Binding DivCode}" FontFamily="Tahoma" FontSize="20"   Height="40" Background="#FFE1E4FF"/>
             </Border>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding CoefZp}"  FontFamily="Tahoma"  FontSize="20" Height="40"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
+                <TextBlock Text="{Binding CoefZp}"  FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
             </Border>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding DateBirthday}" FontFamily="Tahoma"  FontSize="20" Height="40"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
+                <TextBlock Text="{Binding DateBirthday}" FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
             </Border>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Category}" FontFamily="Tahoma"  FontSize="20" Height="40"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
+                <TextBlock Text="{Binding Category}" FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
             </Border>
             <Button Content="Редактировать данные" x:Name="btn_edit_profile" Click="btn_edit_profile_Click" Margin="6,5,0,5" Background="#FFFF4A6D"/>
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Application_Menu"
         mc:Ignorable="d"
-        Title="Карточка товара" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Карточка товара" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
@@ -15,34 +15,37 @@
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="←" Width="60" Height="30" Background="#FFFF4A6D" x:Name="btn_exit" Click="btn_exit_Click"/>
+        <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="32" Margin="5" x:Name="btn_exit" Click="btn_exit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
+            </Button.Background>
+        </Button>
 
         <Border Grid.Column="0" Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0" BorderThickness="2" BorderBrush="#FFFF4A6D">
             <Image Source="{Binding Photo}"/>
         </Border>
 
-        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
+        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,45,0,0">
             <TextBlock Text="Имя товара" FontSize="20" FontFamily="Tahoma" Width="120"  HorizontalAlignment="Left"/>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Title}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center"  />
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="40">
+                <TextBlock Text="{Binding Title}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" Background="#FFE1E4FF"  />
             </Border>
             <TextBlock Text="Изготовитель товара" FontSize="20" FontFamily="Tahoma" Width="130"  HorizontalAlignment="Left"/>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Manufacturer}"  FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" />
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="40">
+                <TextBlock Text="{Binding Manufacturer}"  FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" Background="#FFE1E4FF" />
             </Border>
-            
+
             <TextBlock Text="Цена товара" FontSize="20" FontFamily="Tahoma" Width="130"  HorizontalAlignment="Left"/>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="100" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Price}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="100" Height="40" TextAlignment="Center"  />
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="40">
+                <TextBlock Text="{Binding Price}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" Background="#FFE1E4FF"  />
             </Border>
             <TextBlock Text="Описание товара" FontSize="20" FontFamily="Tahoma" Width="200" HorizontalAlignment="Left"/>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="400" HorizontalAlignment="Left" Height="100">
-                <TextBlock Text="{Binding Description}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="400" Height="100" />
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="100">
+                <TextBlock Text="{Binding Description}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="100" Background="#FFE1E4FF" />
             </Border>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-            <Button x:Name="btn_add_to_basket" Content="Добавить в корзину" Background="#FFFF4A6D" Click="btn_add_to_basket_Click"/>
-        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Orientation="Horizontal"/>
+        <Button x:Name="btn_add_to_basket" Content="Добавить в корзину" Background="#FFFF4A6D" Click="btn_add_to_basket_Click" Grid.Column="1" Margin="23,8,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Window>

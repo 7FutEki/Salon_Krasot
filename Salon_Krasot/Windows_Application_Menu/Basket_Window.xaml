@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Application_Menu"
         mc:Ignorable="d"
         Title="Корзина" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -16,9 +16,13 @@
 
 
 
-        <Button x:Name="btn_exit" Grid.Row="0" Content="←" Width="80" Margin="10,0,0,0" Height="35" Background="#FFFF4A6D" />
+        <Button x:Name="btn_exit" Grid.Row="0" Width="60" Margin="10,0,0,0" Height="32" >
+            <Button.Background>
+                <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
+            </Button.Background>
+        </Button>
 
-        <ListBox Grid.Row="1" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" x:Name="Basket_lb">
+        <ListBox Grid.Row="1" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" x:Name="Basket_lb" Background="#FFE1E4FF">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3"/>

@@ -17,11 +17,15 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
-            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Content="←" Width="80" Height="35" Background="#FFFF4A6D" Click="btn_exit_Click" />
+            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Width="60" Height="32" Click="btn_exit_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
+                </Button.Background>
+            </Button>
             <TextBox Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
         </StackPanel>
 
-        <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" Grid.ColumnSpan="2" Background="#FFFFE4FF">
+        <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" Grid.ColumnSpan="2" Background="#FFE1E4FF">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3"/>

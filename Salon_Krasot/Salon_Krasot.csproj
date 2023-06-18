@@ -9,7 +9,12 @@
 
   <ItemGroup>
     <None Remove="beauty_logo.png" />
+    <None Remove="Windows_Application_Menu\история.png" />
     <None Remove="Windows_Application_Menu\Корзина.png" />
+    <None Remove="Windows_Application_Menu\профиль.png" />
+    <None Remove="Windows_Application_Menu\стрелка.png" />
+    <None Remove="Windows_Product_Mahinations\стрелка.png" />
+    <None Remove="Windows_To_Register\знак ключа.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,7 +23,12 @@
 
   <ItemGroup>
     <Resource Include="beauty_logo.png" />
+    <Resource Include="Windows_Application_Menu\история.png" />
     <Resource Include="Windows_Application_Menu\Корзина.png" />
+    <Resource Include="Windows_Application_Menu\профиль.png" />
+    <Resource Include="Windows_Application_Menu\стрелка.png" />
+    <Resource Include="Windows_Product_Mahinations\стрелка.png" />
+    <Resource Include="Windows_To_Register\знак ключа.png" />
   </ItemGroup>
 
 </Project>

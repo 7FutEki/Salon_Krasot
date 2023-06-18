@@ -17,11 +17,15 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
-            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Content="←" Width="80" Height="35" Background="#FFFF4A6D" />
+            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Width="60" Height="32" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
+                </Button.Background>
+            </Button>
             <TextBox Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
         </StackPanel>
 
-        <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" Grid.ColumnSpan="2" Background="#FFFFE4FF">
+        <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" Grid.ColumnSpan="2" Background="#FFE1E4FF">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3"/>
@@ -43,16 +47,17 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button  Width="58" Height="40" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="0" x:Name="btn_basket" Click="btn_basket_Click">
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="/Windows_Application_Menu/Корзина.png" Stretch="UniformToFill" TileMode="None"/>
-            </Button.OpacityMask>
+        <Button  Width="60" Height="32" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="0" x:Name="btn_basket" Click="btn_basket_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/Windows_Application_Menu/Корзина.png" Stretch="Fill"/>
+                <ImageBrush ImageSource="/Windows_Application_Menu/Корзина.png"/>
             </Button.Background>
         </Button>
 
-        <Button Grid.Row="0" Width="90" Height="40" HorizontalAlignment="Right" Margin="0,0,78,0" x:Name="btn_profile" Click="btn_profile_Click" Content="Профиль"/>
+        <Button Width="60" Height="32" Margin="665,0,0,0" x:Name="btn_profile" Click="btn_profile_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="/Windows_Application_Menu/профиль.png"/>
+            </Button.Background>
+        </Button>
 
         <Button Content="Выбрать товар" Grid.Row="2" Width="120" Height="35" Margin="340,5,0,0" VerticalAlignment="Top" Background="#FFFF4A6D" FontFamily="Tahoma" x:Name="btn_choose" Click="btn_choose_Click"/>
     </Grid>

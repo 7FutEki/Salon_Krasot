@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Profiles"
         mc:Ignorable="d"
-        Title="Редактирование профиля" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Редактирование профиля" Height="500" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="220"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image Width="200" Height="200" Source="C:\Users\User\Desktop\Salon_Krasot-master\Salon_Krasot\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Grid.Column="0"/>
+        <Image Width="200" Height="200" Source="C:\Users\User\Desktop\Salon_Krasot-master\Salon_Krasot\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,0,100" Grid.Column="0"/>
             <Button HorizontalAlignment="Right" Content="Выйти" Grid.Column="1" VerticalAlignment="Top" x:Name="btn_exit_profile" Click="btn_exit_profile_Click" Margin="5" Background="#FFFF4A6D"/>
             <StackPanel Grid.Column="1" >
                 <TextBlock Text="Мои данные" FontSize="20" FontFamily="Tahoma" Margin="6,10,10,5" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <TextBox Text="{Binding Surname}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FFFF4A6D"/>
-                <TextBox Text="{Binding Name}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FFFF4A6D"/>
-                <TextBox Text="{Binding Patronymic}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FFFF4A6D"/>
-                <TextBox Text="{Binding DateBirthday}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FFFF4A6D"/>
-                <TextBox Text="{Binding NumberPhone}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FFFF4A6D"/>
-                <TextBox Text="{Binding Email}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FFFF4A6D"/>
-                <TextBox Text="{Binding Sex}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FFFF4A6D"/>
-                <Button Content="Сохранить измененные данные" x:Name="save_edit_profile" Click="save_edit_profile_Click" Margin="6,0,0,0" Background="#FFFF4A6D"/>
-            </StackPanel>
+                <TextBox Text="{Binding Surname}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBox Text="{Binding Name}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBox Text="{Binding Patronymic}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBox Text="{Binding DateBirthday}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBox Text="{Binding NumberPhone}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBox Text="{Binding Email}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBox Text="{Binding Sex}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <Button Content="Сохранить измененные данные" x:Name="save_edit_profile" Margin="45,0,0,100" Click="save_edit_profile_Click" Background="#FFFF4A6D"/>
+        </StackPanel>
             <Button Content="Изменить фотографию" x:Name="btn_edit_image" Click="btn_edit_image_Click" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,160" Width="200" Background="#FFFF4A6D" />
 
         </Grid>
