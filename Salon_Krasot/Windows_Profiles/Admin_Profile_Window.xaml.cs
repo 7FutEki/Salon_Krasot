@@ -38,9 +38,7 @@ namespace Salon_Krasot.Windows_Profiles
 
         
 
-        private void btn_edit_data_Click(object sender, RoutedEventArgs e)
-        {
-        }
+        
 
         private void btn_edit_image_Click(object sender, RoutedEventArgs e)
         {
@@ -56,6 +54,20 @@ namespace Salon_Krasot.Windows_Profiles
             public DateOnly DateBirthday { get; set; }
             public string Category { get; set; }
             public int CoefZp { get; set; }
+        }
+
+        private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            Close();
+            mainWindow.ShowDialog();
+        }
+
+        private void btn_edit_profile_Click(object sender, RoutedEventArgs e)
+        {
+            Admin_Edit_Profile_Window admin_Edit_Profile_Window = new Admin_Edit_Profile_Window();
+            Close();
+            admin_Edit_Profile_Window.ShowDialog();
         }
     }
 }

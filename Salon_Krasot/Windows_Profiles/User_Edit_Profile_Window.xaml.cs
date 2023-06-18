@@ -15,34 +15,42 @@ using System.Windows.Shapes;
 namespace Salon_Krasot.Windows_Profiles
 {
     /// <summary>
-    /// Логика взаимодействия для User_Profile_Window.xaml
+    /// Логика взаимодействия для User_Edit_Profile_Window.xaml
     /// </summary>
-    public partial class User_Profile_Window : Window
+    public partial class User_Edit_Profile_Window : Window
     {
-        public User user;
-        public User_Profile_Window()
+        User user;
+        public User_Edit_Profile_Window()
         {
+            InitializeComponent();
             user = new User();
             InitializeComponent();
             DataContext = user;
             user.Surname = "Мифтахов";
             user.Name = "Роман";
             user.Patronymic = "Марселевич";
-            user.DateBirthday = new DateOnly(2005, 12, 2);
+            user.DateBirthday = new DateOnly(2005, 12, 2); //почему то нельзя в тектобоксе редактировать
             user.NumberPhone = "89873477702";
             user.Email = "nekromant@gmail.com";
             user.Sex = "M";
         }
 
-        private void btn_edit_profile_Click(object sender, RoutedEventArgs e)
+        private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
         {
-            User_Edit_Profile_Window user_Edit_Profile_Window = new User_Edit_Profile_Window();
+            User_Profile_Window user_Profile_Window = new User_Profile_Window();
             Close();
-            user_Edit_Profile_Window.ShowDialog();
+            user_Profile_Window.ShowDialog();
         }
 
-        
+        private void save_edit_profile_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void btn_edit_image_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
         public class User
         {
             public string Surname { get; set; }
@@ -52,13 +60,6 @@ namespace Salon_Krasot.Windows_Profiles
             public string NumberPhone { get; set; }
             public string Email { get; set; }
             public string Sex { get; set; }
-        }
-
-        private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            Close();
-            mainWindow.ShowDialog();
         }
     }
 }

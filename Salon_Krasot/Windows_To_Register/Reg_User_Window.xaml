@@ -20,13 +20,13 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Имя пользователя:" Margin="72,17,204,10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="20" FontFamily="Tahoma"/>
+        <TextBlock Text="Имя пользователя:" Margin="72,17,204,10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="20" Width="200" FontFamily="Tahoma"/>
         <TextBox Grid.Row="1" Margin="72,37,72,18" Grid.ColumnSpan="2" Height="35" Grid.RowSpan="4" FontFamily="Tahoma"/>
 
         <TextBlock Text="Пароль:" Grid.Row="4" Grid.Column="0" Margin="72,38,204,-15" Grid.ColumnSpan="2" Height="20" FontFamily="Tahoma"/>
         <PasswordBox Grid.Row="4" Margin="72,59,72,-51" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
 
-        <TextBlock Text="Повторите пароль:" Grid.Row="4" Grid.Column="0" Margin="72,106,204,-83" Grid.ColumnSpan="2" Height="20" FontFamily="Tahoma"/>
+        <TextBlock Text="Повторите пароль:" Grid.Row="4" Grid.Column="0" Margin="72,106,204,-83" Grid.ColumnSpan="2" Height="20" Width="200" FontFamily="Tahoma"/>
         <PasswordBox  Grid.Row="4" Margin="72,127,72,-119" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
 
 

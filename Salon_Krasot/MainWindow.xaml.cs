@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Salon_Krasot.Windows_Application_Menu;
 using Salon_Krasot.Windows_Profiles;
+using Salon_Krasot.Windows_To_Register;
 
 namespace Salon_Krasot
 {
@@ -36,15 +38,20 @@ namespace Salon_Krasot
         {
             //Windows_To_Register.Reg_User_Window reg_User_Window = new Windows_To_Register.Reg_User_Window();
             //reg_User_Window.Show();
-            Windows_Profiles.User_Profile_Window user_Profile_Window = new User_Profile_Window();
-            user_Profile_Window.Show();
+            Reg_User_Window reg_User_Window = new Reg_User_Window();
+            Close();
+            reg_User_Window.ShowDialog();
+
         }
 
         private void continue_btn_Click(object sender, RoutedEventArgs e)
         {
-            Windows_Application_Menu.Main_Part_Window main_Part_Window = new Windows_Application_Menu.Main_Part_Window();
-            main_Part_Window.Show();
-            this.Close();
+            //Windows_Application_Menu.Gost_Main_Part_Window main_Part_Window = new Windows_Application_Menu.Gost_Main_Part_Window();
+            //main_Part_Window.Show();
+            //this.Close();
+            Admin_Main_Part_Window admin_Main_Part_Window = new Admin_Main_Part_Window();
+            Close();
+            admin_Main_Part_Window.ShowDialog();
 
         }
 

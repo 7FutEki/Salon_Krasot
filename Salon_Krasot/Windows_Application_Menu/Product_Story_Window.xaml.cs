@@ -12,28 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Salon_Krasot.Windows_To_Register
+namespace Salon_Krasot.Windows_Application_Menu
 {
     /// <summary>
-    /// Логика взаимодействия для Reg_User_Window.xaml
+    /// Логика взаимодействия для Product_Story_Window.xaml
     /// </summary>
-    public partial class Reg_User_Window : Window
+    public partial class Product_Story_Window : Window
     {
-        public Reg_User_Window()
+        public Product_Story_Window()
         {
             InitializeComponent();
         }
 
-        private void btn_reg_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+            Product_Main_Window product_Main_Window = new Product_Main_Window();
             Close();
-            mainWindow.ShowDialog();
+            product_Main_Window.ShowDialog();
         }
     }
 }
