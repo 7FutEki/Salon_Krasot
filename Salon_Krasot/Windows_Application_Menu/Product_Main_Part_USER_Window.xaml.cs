@@ -39,5 +39,7 @@ namespace Salon_Krasot.Windows_Application_Menu
             Close();
             user_Main_Part_Window.ShowDialog();
         }
+
+        
     }
 }

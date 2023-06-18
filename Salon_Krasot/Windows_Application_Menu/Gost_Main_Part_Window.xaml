@@ -13,10 +13,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
-            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Content="←" Width="80" Height="35" Background="#FFFF4A6D" />
+            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Content="←" Width="80" Height="35" Background="#FFFF4A6D" Click="btn_exit_Click" />
             <TextBox Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
         </StackPanel>
 
@@ -39,11 +40,12 @@
                         <TextBlock Text="{Binding Name}" Grid.Row="1" Margin="0,5,0,0" TextWrapping="Wrap"/>
                         <TextBlock Text="{Binding Manufacturer}" Grid.Row="2" Margin="0,5,0,0"/>
                         <TextBlock Text="{Binding Price}" Grid.Row="3" Margin="0,5,0,0"/>
-                       
+
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Content="Выбрать товар" Grid.Row="2" Width="120" Height="35" Margin="340,5,0,0" VerticalAlignment="Top" Background="#FFFF4A6D" FontFamily="Tahoma" x:Name="btn_choose" Click="btn_choose_Click"/>
 
 
 

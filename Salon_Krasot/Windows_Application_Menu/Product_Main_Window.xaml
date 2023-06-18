@@ -30,14 +30,15 @@
             <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="300" HorizontalAlignment="Left" Height="40">
                 <TextBlock Text="{Binding Manufacturer}"  FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" />
             </Border>
-            <TextBlock Text="Активен\Неактивен" FontSize="20" FontFamily="Tahoma" Width="180"  HorizontalAlignment="Left"/>
-            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="50" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Active}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="50" Height="40" TextAlignment="Center"   />
-            </Border>
+            <CheckBox Content="Активен\Неактивен" FontFamily="Tahoma" FontSize="20" />
             <!--здесь надо писать не "да, нет", а 0 или 1-->
             <TextBlock Text="Цена товара" FontSize="20" FontFamily="Tahoma" Width="130"  HorizontalAlignment="Left"/>
             <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="100" HorizontalAlignment="Left" Height="40">
                 <TextBlock Text="{Binding Price}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="100" Height="40" TextAlignment="Center"  />
+            </Border>
+            <TextBlock Text="Описание товара" FontSize="20" FontFamily="Tahoma" Width="200" HorizontalAlignment="Left"/>
+            <Border BorderThickness="2" BorderBrush="#FFFF4A6D" Width="400" HorizontalAlignment="Left" Height="100">
+                <TextBlock Text="{Binding Description}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="400" Height="100" />
             </Border>
         </StackPanel>
 

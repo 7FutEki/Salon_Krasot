@@ -44,6 +44,18 @@ namespace Salon_Krasot.Windows_Application_Menu
 
         }
 
-       
+        private void btn_choose_Click(object sender, RoutedEventArgs e)
+        {
+            Product_Main_Part_GUEST_Window product_Main_Part_GUEST_Window = new Product_Main_Part_GUEST_Window();
+            Close();
+            product_Main_Part_GUEST_Window.ShowDialog();
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            Close();
+            mainWindow.ShowDialog();
+        }
     }
 }

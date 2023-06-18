@@ -46,12 +46,10 @@ namespace Salon_Krasot
 
         private void continue_btn_Click(object sender, RoutedEventArgs e)
         {
-            //Windows_Application_Menu.Gost_Main_Part_Window main_Part_Window = new Windows_Application_Menu.Gost_Main_Part_Window();
-            //main_Part_Window.Show();
-            //this.Close();
-            Admin_Main_Part_Window admin_Main_Part_Window = new Admin_Main_Part_Window();
-            Close();
-            admin_Main_Part_Window.ShowDialog();
+            Windows_Application_Menu.Gost_Main_Part_Window main_Part_Window = new Windows_Application_Menu.Gost_Main_Part_Window();
+            main_Part_Window.Show();
+            this.Close();
+
 
         }
 
