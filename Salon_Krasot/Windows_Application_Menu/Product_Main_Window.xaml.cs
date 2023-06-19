@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salon_Krasot.Windows_Product_Mahinations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,9 @@ namespace Salon_Krasot.Windows_Application_Menu
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
         {
-
+            Edit_Product_Window edit_Product_Window = new Edit_Product_Window();
+            Close();
+            edit_Product_Window.ShowDialog();
         }
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)

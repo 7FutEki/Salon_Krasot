@@ -35,6 +35,7 @@ namespace Salon_Krasot
         private void reg_admin_btn_Click(object sender, RoutedEventArgs e)
         {
             Key_Reg_Window key_Reg_Window = new Key_Reg_Window();
+            Close();
             key_Reg_Window.Show();
             
         }
@@ -49,9 +50,9 @@ namespace Salon_Krasot
 
         private void continue_btn_Click(object sender, RoutedEventArgs e)
         {
-            User_Main_Part_Window  main_Part_Window = new User_Main_Part_Window();
-            main_Part_Window.Show();
+            Gost_Main_Part_Window  gost_main_Part_Window = new Gost_Main_Part_Window();
             this.Close();
+            gost_main_Part_Window.Show();
 
         }
 
