@@ -41,4 +41,8 @@
     <Resource Include="Windows_To_Register\знак ключа.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DB\" />
+  </ItemGroup>
+
 </Project>
