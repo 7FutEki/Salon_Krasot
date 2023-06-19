@@ -69,5 +69,10 @@ namespace Salon_Krasot.Windows_Profiles
             Close();
             admin_Edit_Profile_Window.ShowDialog();
         }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

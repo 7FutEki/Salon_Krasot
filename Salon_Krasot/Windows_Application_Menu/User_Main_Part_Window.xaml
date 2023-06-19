@@ -17,11 +17,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
-            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Width="60" Height="32" >
-                <Button.Background>
-                    <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
-                </Button.Background>
-            </Button>
+           
             <TextBox Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
         </StackPanel>
 
@@ -38,10 +34,14 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Image Source="{Binding Image}" Height="100" Width="100"/>
-                        <TextBlock Text="{Binding Name}" Grid.Row="1" Margin="0,5,0,0"/>
-                        <TextBlock Text="{Binding Price}" Grid.Row="2" Margin="0,5,0,0"/>
+                        <TextBlock Text="{Binding Title}" Grid.Row="1" Margin="0,5,0,0"/>
+                        <TextBlock Text="{Binding Manufacturer}" Grid.Row="2" Margin="0,5,0,0"/>
+                        <TextBlock Text="{Binding Price}" Grid.Row="3" Margin="0,5,0,0"/>
+                        <TextBlock Text="{Binding Active}" Grid.Row="4" Margin="0,5,0,0"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -53,7 +53,7 @@
             </Button.Background>
         </Button>
 
-        <Button Width="60" Height="32" Margin="665,0,0,0" x:Name="btn_profile" Click="btn_profile_Click" >
+        <Button Width="60" Height="32" Margin="0,0,75,0" HorizontalAlignment="Right" x:Name="btn_profile" Click="btn_profile_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="/Windows_Application_Menu/профиль.png"/>
             </Button.Background>

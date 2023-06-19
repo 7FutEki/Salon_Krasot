@@ -16,7 +16,7 @@
 
 
 
-        <Button x:Name="btn_exit" Grid.Row="0" Width="60" Margin="10,0,0,0" Height="32" >
+        <Button x:Name="btn_exit" Grid.Row="0" Width="60" Margin="10,0,0,0" Height="32" Click="btn_exit_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
             </Button.Background>

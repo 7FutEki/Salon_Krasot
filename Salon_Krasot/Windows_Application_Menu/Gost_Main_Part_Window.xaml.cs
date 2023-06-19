@@ -33,7 +33,7 @@ namespace Salon_Krasot.Windows_Application_Menu
             Products.Add(new Product { Name = "Туз", Price = 5435 });
             Products.Add(new Product { Name = "Тестирование", Price = 4234 });
             Products.Add(new Product { Name = "Снова тестирование", Price = 3132 });
-            Products.Add(new Product { Name = "Черт побери, откуда тут взялся туз¿", Price = 3132, Manufacturer="adawgaa" });
+            Products.Add(new Product { Name = "Черт побери, откуда тут взялся туз¿", Price = 3132, Manufacturer="adawgaa", Active="Активен" });
         }
         public class Product
         {
@@ -41,6 +41,7 @@ namespace Salon_Krasot.Windows_Application_Menu
             public double Price { get; set; }
             public string Image { get; set; }
             public string Manufacturer { get; set; }
+            public string Active { get; set; }
 
         }
 

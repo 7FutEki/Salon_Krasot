@@ -17,11 +17,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
-            <Button x:Name="btn_exit" Grid.Row="0" Margin="0,0,5,0" Width="60" Height="32" >
-                <Button.Background>
-                    <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
-                </Button.Background>
-            </Button>
+           
             <TextBox Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
         </StackPanel>
 
@@ -45,7 +41,6 @@
                         <TextBlock Text="{Binding Manufacturer}" Grid.Row="1" Margin="0,5,0,0"/>
                         <TextBlock Text="{Binding Price}" Grid.Row="2" Margin="0,5,0,0"/>
                         <CheckBox Content="Активен" Grid.Row="3" x:Name="cb_active"  />
-                        <!--checkbox надо, я долбаеб удалил его-->
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -64,7 +59,7 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
             <Button Width="120" Height="40"  HorizontalAlignment="Center" Content="Выбрать товар" Margin="0,0,10,0" x:Name="btn_choose" Click="btn_choose_Click" Background="#FFFF4A6D" FontFamily="Tahoma" />
-            <Button Width="120" Height="40"  HorizontalAlignment="Center" Content="Добавить товар" x:Name="btn_add" Click="btn_add_Click"  FontFamily="Tahoma" />
+            <Button Width="120" Height="40"  HorizontalAlignment="Center" Content="Добавить товар" x:Name="btn_add" Click="btn_add_Click"  FontFamily="Tahoma"  Background="#FFFF4A6D" />
 
         </StackPanel>
 

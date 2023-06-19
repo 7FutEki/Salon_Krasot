@@ -43,5 +43,12 @@ namespace Salon_Krasot.Windows_Application_Menu
             public string Image { get; set; }
 
         }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            User_Main_Part_Window user_Main_Part_Window = new User_Main_Part_Window();
+            Close();
+            user_Main_Part_Window.ShowDialog();
+        }
     }
 }

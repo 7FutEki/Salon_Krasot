@@ -11,8 +11,14 @@
             <ColumnDefinition Width="220"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Image Width="200" Height="200" Source="C:\Users\User\Desktop\Salon_Krasot-master\Salon_Krasot\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,0,100" Grid.Column="0"/>
+        <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="32" Margin="5" x:Name="btn_exit" Click="btn_exit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
+            </Button.Background>
+        </Button>
+        <Image Width="200" Height="200" Source="\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,50,0,100" Grid.Column="0"/>
         <ScrollViewer Grid.Column="1">
+            
             <StackPanel Grid.Column="1" >
             <TextBlock Text="Мои данные" FontSize="20" FontFamily="Tahoma" Margin="6,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
             <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
@@ -45,7 +51,7 @@
         </ScrollViewer>
         <Button HorizontalAlignment="Right" Content="Выйти из аккаунта" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" x:Name="btn_exit_profile" Click="btn_exit_profile_Click" Margin="5,5,20,5" Background="#FFFF4A6D"/>
 
-        <Button Content="Изменить фотографию" x:Name="btn_edit_image" Click="btn_edit_image_Click" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,160" Width="200" Background="#FFFF4A6D" />
+        <Button Content="Изменить фотографию" x:Name="btn_edit_image" Click="btn_edit_image_Click" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,110" Width="200" Background="#FFFF4A6D" />
 
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salon_Krasot.Windows_Application_Menu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -59,6 +60,13 @@ namespace Salon_Krasot.Windows_Profiles
             MainWindow mainWindow = new MainWindow();
             Close();
             mainWindow.ShowDialog();
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            User_Main_Part_Window user_Main_Part_Window = new User_Main_Part_Window();
+            Close();
+            user_Main_Part_Window.ShowDialog();
         }
     }
 }
