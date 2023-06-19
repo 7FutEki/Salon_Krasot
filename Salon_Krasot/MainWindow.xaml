@@ -20,8 +20,8 @@
             <RowDefinition Height="Auto" MinHeight="320"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Имя пользователя:" Margin="36,135,215,240" Grid.Row="3" Grid.Column="1" FontFamily="Tahoma"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="36,153,36,211" FontFamily="Tahoma"/>
+        <TextBlock Text="Имя пользователя:" Margin="36,155,215,220" Grid.Row="3" Grid.Column="1" FontFamily="Tahoma"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="36,173,36,191" FontFamily="Tahoma"/>
 
         <TextBlock Text="Пароль:" Grid.Row="3" Grid.Column="1" Margin="36,213,233,167" FontFamily="Tahoma"/>
         <PasswordBox  Grid.Row="3" Grid.Column="1" Margin="36,232,36,132" Height="35" FontFamily="Tahoma"/>
@@ -36,7 +36,7 @@
                 <ImageBrush ImageSource="/beauty_logo.png"/>
             </Image.OpacityMask>
         </Image>
-        
-        
+
+
     </Grid>
 </Window>
