@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using Salon_Krasot.Windows_Application_Menu;
 using Salon_Krasot.Windows_Profiles;
 using Salon_Krasot.Windows_To_Register;
+using Salon_Krasot.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Salon_Krasot
 {
@@ -26,6 +28,8 @@ namespace Salon_Krasot
         public MainWindow()
         {
             InitializeComponent();
+            ApplicationContext db = new ApplicationContext();
+            db.Database.Migrate();
         }
 
         private void reg_admin_btn_Click(object sender, RoutedEventArgs e)

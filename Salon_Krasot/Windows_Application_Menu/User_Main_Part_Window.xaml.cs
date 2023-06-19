@@ -1,4 +1,5 @@
-﻿using Salon_Krasot.Windows_Profiles;
+﻿using Salon_Krasot.Models;
+using Salon_Krasot.Windows_Profiles;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,20 +23,20 @@ namespace Salon_Krasot.Windows_Application_Menu
     /// </summary>
     public partial class User_Main_Part_Window : Window
     {
-        public ObservableCollection<Product> Products { get; set; }
+        public ObservableCollection<Product_Card> Products { get; set; }
         public User_Main_Part_Window()
         {
             InitializeComponent();
-            Products = new ObservableCollection<Product>();
+            Products = new ObservableCollection<Product_Card>();
             Katalog_lb.ItemsSource = Products;
 
-            Products.Add(new Product { Title = "ТЕСТ", Price = 999 });
-            Products.Add(new Product { Title = "Тест", Price = 849 });
-            Products.Add(new Product { Title = "ТеСт", Price = 1312 });
-            Products.Add(new Product { Title = "Туз", Price = 5435 });
-            Products.Add(new Product { Title = "Тестирование", Price = 4234 });
-            Products.Add(new Product { Title = "Снова тестирование", Price = 3132 });
-            Products.Add(new Product { Title = "Черт побери, откуда тут взялся туз¿", Price = 3132, Manufacturer = "adawgaa", Active = "Активен" });
+            Products.Add(new Product_Card { Title = "ТЕСТ", Price = 999 });
+            Products.Add(new Product_Card { Title = "Тест", Price = 849 });
+            Products.Add(new Product_Card { Title = "ТеСт", Price = 1312 });
+            Products.Add(new Product_Card { Title = "Туз", Price = 5435 });
+            Products.Add(new Product_Card { Title = "Тестирование", Price = 4234 });
+            Products.Add(new Product_Card { Title = "Снова тестирование", Price = 3132 });
+            Products.Add(new Product_Card { Title = "Черт побери, откуда тут взялся туз¿", Price = 3132, Manufacturer = "adawgaa" });
         }
 
         private void btn_profile_Click(object sender, RoutedEventArgs e)
@@ -62,14 +63,6 @@ namespace Salon_Krasot.Windows_Application_Menu
 
 
 
-        public class Product
-        {
-            public string Title { get; set; }
-            public double Price { get; set; }
-            public string Image { get; set; }
-            public string Manufacturer { get; set; }
-            public string Active { get; set; }
-
-        }
+        
     }
 }

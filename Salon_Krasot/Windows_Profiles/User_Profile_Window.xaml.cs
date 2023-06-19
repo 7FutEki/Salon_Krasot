@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Salon_Krasot.Models;
 namespace Salon_Krasot.Windows_Profiles
 {
     /// <summary>
@@ -44,16 +44,7 @@ namespace Salon_Krasot.Windows_Profiles
 
         
 
-        public class User
-        {
-            public string Surname { get; set; }
-            public string Name { get; set; }
-            public string Patronymic { get; set; }
-            public DateOnly DateBirthday { get; set; }
-            public string NumberPhone { get; set; }
-            public string Email { get; set; }
-            public string Sex { get; set; }
-        }
+       
 
         private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
         {
