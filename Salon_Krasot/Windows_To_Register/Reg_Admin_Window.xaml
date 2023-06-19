@@ -21,10 +21,10 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Имя администратора:" Margin="59,23,59,71" Grid.Row="3" Grid.Column="0" Height="20" Grid.ColumnSpan="2" FontFamily="Tahoma"/>
-        <TextBox Margin="59,42,59,37" Grid.ColumnSpan="2" Height="35" Grid.Row="3"/>
+        <TextBox Text="{Binding Login}" Margin="59,42,59,37" Grid.ColumnSpan="2" Height="35" Grid.Row="3"/>
 
         <TextBlock Text="Пароль:" Grid.Row="3" Grid.Column="0" Margin="59,94,59,0" Height="20" Grid.ColumnSpan="2" FontFamily="Tahoma"/>
-        <PasswordBox Grid.Row="3" Margin="59,114,59,-35" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
+        <PasswordBox  Grid.Row="3" Margin="59,114,59,-35" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
 
         <TextBlock Text="Повторите пароль:" Grid.Row="3" Grid.Column="0" Margin="59,163,59,-69" Grid.ColumnSpan="2" Height="20" FontFamily="Tahoma"/>
         <PasswordBox  Grid.Row="3" Margin="59,183,59,-104" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
