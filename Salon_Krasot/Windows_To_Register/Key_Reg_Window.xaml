@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_To_Register"
         mc:Ignorable="d"
-         Height="150" Width="400" Icon="/beauty_logo.png" Title="Вход" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+         Height="150" Width="400" Icon="/beauty_logo.png" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>

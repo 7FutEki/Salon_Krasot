@@ -62,6 +62,9 @@ namespace Salon_Krasot.Windows_Profiles
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
+            Admin_Main_Part_Window admin_Main_Part_Window = new Admin_Main_Part_Window();
+            Close();
+            admin_Main_Part_Window.ShowDialog();
 
         }
     }

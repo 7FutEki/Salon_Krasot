@@ -42,21 +42,24 @@ namespace Salon_Krasot.Windows_To_Register
             {
                 MessageBox.Show("Необходимо минимум 8 символов");
             }
-
-            User user = new User()
+            else
             {
-                Login = login,
-                Password = password
-            };
+                User user = new User()
+                {
+                    Login = login,
+                    Password = password
+                };
 
-            dbContext.Users.Add(user); 
-            dbContext.SaveChanges();
+                dbContext.Users.Add(user); 
+                dbContext.SaveChanges();
 
-            MessageBox.Show("Пользователь зарегистрирован.");
+                MessageBox.Show("Пользователь зарегистрирован.");
 
-            MainWindow mainWindow = new MainWindow();
-            Close();
-            mainWindow.ShowDialog();
+                MainWindow mainWindow = new MainWindow();
+                Close();
+                mainWindow.ShowDialog();
+            }
+
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)

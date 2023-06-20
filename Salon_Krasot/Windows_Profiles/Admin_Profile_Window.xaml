@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Profiles"
         mc:Ignorable="d"
-        Title="Admin_Profile_Window" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Профиль" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
