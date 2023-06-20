@@ -22,7 +22,7 @@
                     <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
                 </Button.Background>
             </Button>
-            <TextBox Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
+            <TextBox x:Name="Search_tb" TextChanged="Search_tb_TextChanged" Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
         </StackPanel>
 
         <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" Grid.ColumnSpan="2" Background="#FFE1E4FF">
@@ -42,9 +42,7 @@
                         </Grid.RowDefinitions>
                         <Image Source="{Binding Photo}" Height="100" Width="100"/>
                         <TextBlock Text="{Binding Title}" Grid.Row="1" Margin="0,5,0,0" TextWrapping="Wrap"/>
-                        <TextBlock Text="{Binding Manufacturer}" Grid.Row="2" Margin="0,5,0,0"/>
                         <TextBlock Text="{Binding Price}" Grid.Row="3" Margin="0,5,0,0"/>
-
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

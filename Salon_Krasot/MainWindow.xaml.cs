@@ -51,10 +51,40 @@ namespace Salon_Krasot
         private void continue_btn_Click(object sender, RoutedEventArgs e)
         {
             Gost_Main_Part_Window  gost_main_Part_Window = new Gost_Main_Part_Window();
-            this.Close();
+            Close();
             gost_main_Part_Window.Show();
 
         }
 
+        private void authorization_btn_Click(object sender, RoutedEventArgs e)
+        {
+            string login = login_tb.Text;
+            string password = password_pb.Password;
+            using (var context = new ApplicationContext())
+            {
+                var user = context.Users.FirstOrDefault(u => u.Login == login && u.Password == password);
+                var admin = context.Admins.FirstOrDefault(x => x.Login== login && x.Password == password);
+
+                if (user != null)
+                {
+                    MessageBox.Show("Авторизация пользователя успешна!");
+                    User_Main_Part_Window user_Main_Part = new User_Main_Part_Window();
+                    user_Main_Part.Show();
+                    Close();
+                }
+                else if (admin != null)
+                {
+                    MessageBox.Show("Авторизация сотрудника успешна!");
+                    Admin_Main_Part_Window admin_Main_Part = new Admin_Main_Part_Window();
+                    admin_Main_Part.Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неправильный логин или пароль!");
+                }
+
+            }
+        }
     }
 }

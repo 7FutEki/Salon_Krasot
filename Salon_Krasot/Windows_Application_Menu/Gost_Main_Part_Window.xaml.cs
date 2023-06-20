@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,14 +36,22 @@ namespace Salon_Krasot.Windows_Application_Menu
         private void LoadProducts()
         {
             Products = new ObservableCollection<Product_Card>(dbContext.Products_Cards.ToList());
+            foreach (var photo in Products)
+            {
+                photo.Photo = $"/Product_Image/{photo.Photo}";
+                //Фотографии не выводятся(
+            }
             Katalog_lb.ItemsSource = Products;
         }
 
         private void btn_choose_Click(object sender, RoutedEventArgs e)
         {
-            Product_Main_Part_GUEST_Window product_Main_Part_GUEST_Window = new Product_Main_Part_GUEST_Window();
+            if (Katalog_lb.SelectedItem is Product_Card SelectedProduct)
+            {
+            Product_Main_Part_GUEST_Window product_Main_Part_GUEST_Window = new Product_Main_Part_GUEST_Window(SelectedProduct);
             Close();
             product_Main_Part_GUEST_Window.ShowDialog();
+            }
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
@@ -50,6 +59,14 @@ namespace Salon_Krasot.Windows_Application_Menu
             MainWindow mainWindow = new MainWindow();
             Close();
             mainWindow.ShowDialog();
+        }
+
+        private void Search_tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = Search_tb.Text.ToLower();
+            var searchProducts = dbContext.Products_Cards.Where(p => p.Title.ToLower().Contains(searchText)).ToList();
+            Products = new ObservableCollection<Product_Card>(searchProducts);
+            Katalog_lb.ItemsSource = Products;
         }
     }
 }

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Salon_Krasot.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +22,13 @@ namespace Salon_Krasot.Windows_Application_Menu
     /// </summary>
     public partial class Product_Main_Part_GUEST_Window : Window
     {
-        public Product_Main_Part_GUEST_Window()
+        //Верстка, наименование товара, как увидишь, поймешь в чем дело
+        public Product_Main_Part_GUEST_Window(Product_Card product)
         {
             InitializeComponent();
+            DataContext = product;
         }
+
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {

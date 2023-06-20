@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salon_Krasot.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,51 @@ namespace Salon_Krasot.Windows_To_Register
     /// </summary>
     public partial class Reg_Admin_Window : Window
     {
+        private ApplicationContext dbContext;
         public Reg_Admin_Window()
         {
             InitializeComponent();
+            dbContext = new ApplicationContext();
         }
 
+        private void reg_btn_Click(object sender, RoutedEventArgs e)
+        {
+            string login = login_tb.Text;
+            string password = password_pb.Password;
+            string confirmPassword = repeat_password.Password;
+
+            if (password != confirmPassword)
+            {
+                MessageBox.Show("Пароли не совпадают.");
+                return;
+            }
+            else if (password.Length < 8)
+            {
+                MessageBox.Show("Необходимо минимум 8 символов");
+            }
+
+            Admin admin = new Admin()
+            {
+                Login = login,
+                Password = password
+            };
+
+            dbContext.Admins.Add(admin);
+            dbContext.SaveChanges();
+
+            MessageBox.Show("Сотрудник зарегистрирован.");
+
+            MainWindow mainWindow = new MainWindow();
+            Close();
+            mainWindow.ShowDialog();
+        }
         private void out_btn_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
             this.Close();
+            mainWindow.Show();
+
         }
+
     }
 }

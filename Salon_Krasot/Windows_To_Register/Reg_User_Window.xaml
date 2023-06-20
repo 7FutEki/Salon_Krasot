@@ -21,13 +21,13 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Имя пользователя:" Margin="62,17,57,52" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Tahoma" Grid.RowSpan="4"/>
-        <TextBox Text="{Binding Login}" Grid.Row="4" Margin="62,5,57,22" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
+        <TextBox x:Name="login_lb" Grid.Row="4" Margin="62,5,57,22" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
 
         <TextBlock Text="Пароль:" Grid.Row="4" Grid.Column="0" Margin="62,47,57,-5" Grid.ColumnSpan="2" Height="20" FontFamily="Tahoma"/>
-        <PasswordBox  Grid.Row="4" Margin="62,68,57,-41" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
+        <PasswordBox x:Name="password_pb" Grid.Row="4" Margin="62,68,57,-41" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
 
         <TextBlock Text="Повторите пароль:" Grid.Row="4" Grid.Column="0" Margin="62,115,57,-73" Grid.ColumnSpan="2" Height="20" FontFamily="Tahoma"/>
-        <PasswordBox  Grid.Row="4" Margin="62,136,57,-109" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
+        <PasswordBox x:Name="repeat_pass"  Grid.Row="4" Margin="62,136,57,-109" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
 
 
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="4" Margin="0,206,0,-258" Grid.Column="1" Width="320">
