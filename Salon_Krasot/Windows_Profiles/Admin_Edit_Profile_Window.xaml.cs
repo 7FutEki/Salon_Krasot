@@ -22,11 +22,13 @@ namespace Salon_Krasot.Windows_Profiles
         public Admin_Edit_Profile_Window()
         {
             InitializeComponent();
+            
         }
-
+        
         private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
         {
-            Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window();
+            
+            Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window("a");
             Close();
             admin_Profile_Window.ShowDialog();
         }

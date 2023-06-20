@@ -20,25 +20,38 @@ namespace Salon_Krasot.Windows_Profiles
     /// </summary>
     public partial class Admin_Profile_Window : Window
     {
-        Admin profiles { get; set; }
-        public Admin_Profile_Window()
+        Admin admin { get; set; }
+        public Admin_Profile_Window(string login)
         {
-            profiles = new Admin();
+            admin = new Admin();
             InitializeComponent();
-            DataContext = profiles;
-            profiles.Surname = "Коркодинов";
-            profiles.Name = "Арсений";
-            profiles.Patronymic = "Леонидович";
-            profiles.Category = "Сотрудник";
-            profiles.Passport = "3619 655973";
-            profiles.DivCode = 653;
-            profiles.CoefZp = 15;
-            profiles.DateBirthday = new DateOnly(2005, 05, 05);
+            DataContext = admin;
+            LoadProfile(login);
         }
 
-        
+        private void LoadProfile(string login)
+        {
+            using (var db = new ApplicationContext())
+            {
+                var userprofile = db.Admins.Where(x => x.Login == login);
+                foreach (var item in userprofile)
+                {
+                    admin.Name = item.Name;
+                    admin.Surname = item.Surname;
+                    admin.Patronymic = item.Patronymic;
+                    admin.DateBirthday = item.DateBirthday;
+                    admin.Passport = item.Passport;
+                    admin.Sex = item.Sex;
+                    admin.CoefZp = item.CoefZp;
+                    admin.DivCode = item.DivCode;
+                    admin.Category= item.Category;
+                }
+            }
+        }
 
-        
+
+
+
 
         private void btn_edit_image_Click(object sender, RoutedEventArgs e)
         {

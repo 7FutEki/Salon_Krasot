@@ -15,6 +15,6 @@ namespace Salon_Krasot.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public int Count { get; set; }
-        public DateTime Date_Time { get; set; }
+        public string Date_Time { get; set; }
     }
 }

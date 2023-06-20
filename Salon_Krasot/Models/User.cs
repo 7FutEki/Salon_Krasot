@@ -18,11 +18,11 @@ namespace Salon_Krasot.Models
         public string? Surname { get; set; }
         public string? Name { get; set; }
         public string? Patronymic { get; set; }
-        public DateOnly? DateBirthday { get; set; }
+        public string? DateBirthday { get; set; }
         public string? NumberPhone { get; set; }
         public string? Email { get; set; }
         public string? Sex { get; set; }
-        public DateOnly? DateFirstVisit { get; set; }
+        public string? DateFirstVisit { get; set; }
         public byte? Photo { get; set; }
 
     }

@@ -58,6 +58,7 @@ namespace Salon_Krasot
 
         private void authorization_btn_Click(object sender, RoutedEventArgs e)
         {
+            ApplicationContext db = new ApplicationContext();
             string login = login_tb.Text;
             string password = password_pb.Password;
             using (var context = new ApplicationContext())
@@ -67,16 +68,28 @@ namespace Salon_Krasot
 
                 if (user != null)
                 {
-                    MessageBox.Show("Авторизация пользователя успешна!");
-                    User_Main_Part_Window user_Main_Part = new User_Main_Part_Window();
-                    user_Main_Part.Show();
+                    string loginforprofile = "";
+                    var loguser = context.Users.Where(y => y.Login == login);
+                    foreach (var item in loguser)
+                    {
+                        loginforprofile = item.Login;
+                    }
+                    
+
+                    User_Profile_Window user_Profile_Window = new User_Profile_Window(loginforprofile);
+                    user_Profile_Window.Show();
                     Close();
                 }
                 else if (admin != null)
                 {
-                    MessageBox.Show("Авторизация сотрудника успешна!");
-                    Admin_Main_Part_Window admin_Main_Part = new Admin_Main_Part_Window();
-                    admin_Main_Part.Show();
+                    string loginprofile2 = "";
+                    var logadmin = context.Admins.Where(b => b.Login == login);
+                    foreach (var item in logadmin)
+                    {
+                        loginprofile2= item.Login;
+                    }
+                    Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window(loginprofile2);
+                    admin_Profile_Window.Show();
                     Close();
                 }
                 else

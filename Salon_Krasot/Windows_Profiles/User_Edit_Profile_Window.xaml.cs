@@ -27,18 +27,13 @@ namespace Salon_Krasot.Windows_Profiles
             user = new User();
             InitializeComponent();
             DataContext = user;
-            user.Surname = "Мифтахов";
-            user.Name = "Роман";
-            user.Patronymic = "Марселевич";
-            user.DateBirthday = new DateOnly(2005, 12, 2); //почему то нельзя в тектобоксе редактировать
-            user.NumberPhone = "89873477702";
-            user.Email = "nekromant@gmail.com";
-            user.Sex = "M";
+            
         }
+        
 
         private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
         {
-            User_Profile_Window user_Profile_Window = new User_Profile_Window();
+            User_Profile_Window user_Profile_Window = new User_Profile_Window("d");
             Close();
             user_Profile_Window.ShowDialog();
         }

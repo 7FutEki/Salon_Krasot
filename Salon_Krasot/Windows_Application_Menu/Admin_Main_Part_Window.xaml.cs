@@ -43,7 +43,7 @@ namespace Salon_Krasot.Windows_Application_Menu
 
         private void btn_profile_Click(object sender, RoutedEventArgs e)
         {
-            Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window();
+            Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window("d");
             Close();
             admin_Profile_Window.ShowDialog();
         }

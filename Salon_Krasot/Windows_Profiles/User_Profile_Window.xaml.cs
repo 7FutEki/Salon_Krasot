@@ -18,21 +18,34 @@ namespace Salon_Krasot.Windows_Profiles
     /// <summary>
     /// Логика взаимодействия для User_Profile_Window.xaml
     /// </summary>
-    public partial class User_Profile_Window : Window
+    public partial class User_Profile_Window : Window 
     {
         public User user;
-        public User_Profile_Window()
+        public User_Profile_Window(string login)
         {
             user = new User();
             InitializeComponent();
             DataContext = user;
-            user.Surname = "Мифтахов";
-            user.Name = "Роман";
-            user.Patronymic = "Марселевич";
-            user.DateBirthday = new DateOnly(2005, 12, 2);
-            user.NumberPhone = "89873477702";
-            user.Email = "nekromant@gmail.com";
-            user.Sex = "M";
+            LoadProfile(login);
+            
+        }
+
+        private void LoadProfile(string login)
+        {
+            using (var db = new ApplicationContext())
+            {
+                var userprofile = db.Users.Where(x => x.Login == login);
+                foreach (var item in userprofile)
+                {
+                    user.Name = item.Name;
+                    user.Surname = item.Surname;
+                    user.Patronymic = item.Patronymic;
+                    user.DateBirthday = item.DateBirthday;
+                    user.NumberPhone = item.NumberPhone;
+                    user.Sex = item.Sex;
+                    user.Email = item.Email;
+                }
+            }
         }
 
         private void btn_edit_profile_Click(object sender, RoutedEventArgs e)
@@ -40,12 +53,10 @@ namespace Salon_Krasot.Windows_Profiles
             User_Edit_Profile_Window user_Edit_Profile_Window = new User_Edit_Profile_Window();
             Close();
             user_Edit_Profile_Window.ShowDialog();
+            
         }
-
-        
-
        
-
+        
         private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();

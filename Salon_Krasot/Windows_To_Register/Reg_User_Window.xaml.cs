@@ -38,10 +38,12 @@ namespace Salon_Krasot.Windows_To_Register
                 MessageBox.Show("Пароли не совпадают.");
                 return;
             }
+
             else if (password.Length < 8)
             {
                 MessageBox.Show("Необходимо минимум 8 символов");
             }
+
             else
             {
                 User user = new User()
@@ -50,14 +52,30 @@ namespace Salon_Krasot.Windows_To_Register
                     Password = password
                 };
 
-                dbContext.Users.Add(user); 
-                dbContext.SaveChanges();
+                using (var db = new ApplicationContext())
+                {
+                    var checkadmin = db.Admins.FirstOrDefault(x => x.Login == login && x.Password == password);
+                    var checkuser = db.Users.FirstOrDefault(x => x.Login == login && x.Password == password);
+                    if (checkadmin != null)
+                    {
+                        MessageBox.Show("Имя занято");
+                    }
+                    else if (checkuser != null)
+                    {
+                        MessageBox.Show("Имя занято");
+                    }
+                    else
+                    {
+                        dbContext.Users.Add(user);
+                        dbContext.SaveChanges();
 
-                MessageBox.Show("Пользователь зарегистрирован.");
+                        MessageBox.Show("Пользователь зарегистрирован.");
 
-                MainWindow mainWindow = new MainWindow();
-                Close();
-                mainWindow.ShowDialog();
+                        MainWindow mainWindow = new MainWindow();
+                        Close();
+                        mainWindow.ShowDialog();
+                    }
+                }
             }
 
         }

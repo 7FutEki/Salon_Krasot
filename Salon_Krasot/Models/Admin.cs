@@ -20,7 +20,7 @@ namespace Salon_Krasot.Models
         public string? Passport { get; set; }
         public int? DivCode { get; set; }
         public string? Sex { get; set; }
-        public DateOnly? DateBirthday { get; set; }
+        public string? DateBirthday { get; set; }
         public string? Category { get; set; }
         public double? CoefZp { get; set; }
     }
