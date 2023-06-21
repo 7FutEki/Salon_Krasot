@@ -21,23 +21,21 @@ namespace Salon_Krasot.Windows_Application_Menu
     /// </summary>
     public partial class SalesHistory_Window : Window
     {
-
-        public ObservableCollection<Product_Card> Products { get; set; }
+        private ApplicationContext DBcontext;
+        public ObservableCollection<Product_Sale_History> SalesProducts { get; set; }
         public SalesHistory_Window()
         {
             InitializeComponent();
-            Products = new ObservableCollection<Product_Card>();
-            Katalog_lb.ItemsSource = Products;
-
-            Products.Add(new Product_Card { Title = "ТЕСТ", Price = 999,  Manufacturer="adawdad" });
-            Products.Add(new Product_Card { Title = "Тест", Price = 849 });
-            Products.Add(new Product_Card { Title = "ТеСт", Price = 1312 });
-            Products.Add(new Product_Card { Title = "Туз", Price = 5435 });
-            Products.Add(new Product_Card { Title = "Тестирование", Price = 4234 });
-            Products.Add(new Product_Card { Title = "Снова тестирование", Price = 3132 });
-            Products.Add(new Product_Card { Title = "Черт побери, откуда тут взялся туз¿", Price = 3132, Manufacturer="adawdad" });
+            DataContext = this;
+            DBcontext= new ApplicationContext();
+            LoadSalesHistory();
         }
-        
+
+        private void LoadSalesHistory()
+        {
+            SalesProducts = new ObservableCollection<Product_Sale_History>(DBcontext.Product_Sale_History.ToList());
+        }
+
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {

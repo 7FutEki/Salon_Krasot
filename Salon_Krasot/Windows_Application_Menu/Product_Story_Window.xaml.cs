@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Salon_Krasot.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +21,14 @@ namespace Salon_Krasot.Windows_Application_Menu
     /// </summary>
     public partial class Product_Story_Window : Window
     {
+        private ApplicationContext dbContext;
+        public ObservableCollection<Product_Sale_History> Products { get; set; }
         public Product_Story_Window()
         {
             InitializeComponent();
         }
+
+      
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {

@@ -25,7 +25,6 @@ namespace Salon_Krasot.Windows_Profiles
         {
             InitializeComponent();
             user = new User();
-            InitializeComponent();
             DataContext = user;
             
         }

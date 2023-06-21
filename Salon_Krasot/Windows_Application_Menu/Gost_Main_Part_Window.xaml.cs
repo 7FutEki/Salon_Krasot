@@ -41,7 +41,6 @@ namespace Salon_Krasot.Windows_Application_Menu
                 photo.Photo = $"/Product_Image/{photo.Photo}";
                 //Фотографии не выводятся(
             }
-            Katalog_lb.ItemsSource = Products;
         }
 
         private void btn_choose_Click(object sender, RoutedEventArgs e)
