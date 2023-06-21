@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salon_Krasot.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,17 @@ namespace Salon_Krasot.Windows_Profiles
     /// </summary>
     public partial class Admin_Edit_Profile_Window : Window
     {
-        public Admin_Edit_Profile_Window()
+        public Admin admin;
+        public Admin_Edit_Profile_Window(Admin currentAdmin)
         {
             InitializeComponent();
+            admin = currentAdmin;
+            DataContext = admin;
             
         }
+
         
+
         private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
         {
             
@@ -40,7 +46,31 @@ namespace Salon_Krasot.Windows_Profiles
 
         private void save_edit_profile_Click(object sender, RoutedEventArgs e)
         {
+            using (var db = new ApplicationContext())
+            {
+                var currentAdmin = db.Admins.FirstOrDefault(u => u.Login == admin.Login);
+                if (currentAdmin != null)
+                {
+                    currentAdmin.Login = admin.Login;
+                    currentAdmin.Password = admin.Password;
+                    currentAdmin.Name = admin.Name;
+                    currentAdmin.Surname = admin.Surname;
+                    currentAdmin.Patronymic = admin.Patronymic;
+                    currentAdmin.DateBirthday = admin.DateBirthday;
+                    currentAdmin.Passport = admin.Passport;
+                    currentAdmin.Sex = admin.Sex;
+                    currentAdmin.CoefZp = admin.CoefZp;
+                    currentAdmin.DivCode = admin.DivCode;
+                    currentAdmin.Category = admin.Category;
+                    db.SaveChanges();
 
+                    MessageBox.Show("Профиль успешно обновлен.");
+                    Admin_Profile_Window admin_Profile = new Admin_Profile_Window();
+                    Close();
+                    admin_Profile.Show();
+                }
+
+            }
         }
     }
 }

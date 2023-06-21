@@ -40,6 +40,8 @@ namespace Salon_Krasot.Windows_Profiles
                 var userprofile = db.Admins.Where(x => x.Login == login);
                 foreach (var item in userprofile)
                 {
+                    admin.Login = item.Login;
+                    admin.Password= item.Password;
                     admin.Name = item.Name;
                     admin.Surname = item.Surname;
                     admin.Patronymic = item.Patronymic;
@@ -72,7 +74,7 @@ namespace Salon_Krasot.Windows_Profiles
 
         private void btn_edit_profile_Click(object sender, RoutedEventArgs e)
         {
-            Admin_Edit_Profile_Window admin_Edit_Profile_Window = new Admin_Edit_Profile_Window();
+            Admin_Edit_Profile_Window admin_Edit_Profile_Window = new Admin_Edit_Profile_Window(admin);
             Close();
             admin_Edit_Profile_Window.ShowDialog();
         }

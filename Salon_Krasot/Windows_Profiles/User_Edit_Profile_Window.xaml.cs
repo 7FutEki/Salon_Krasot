@@ -20,11 +20,11 @@ namespace Salon_Krasot.Windows_Profiles
     /// </summary>
     public partial class User_Edit_Profile_Window : Window
     {
-        User user;
-        public User_Edit_Profile_Window()
+        private User user;
+        public User_Edit_Profile_Window(User currentUser)
         {
             InitializeComponent();
-            user = new User();
+            user = currentUser ;
             DataContext = user;
             
         }
@@ -39,8 +39,36 @@ namespace Salon_Krasot.Windows_Profiles
 
         private void save_edit_profile_Click(object sender, RoutedEventArgs e)
         {
+            using (var db = new ApplicationContext())
+            {
+                var currentUser = db.Users.FirstOrDefault(u => u.Login == user.Login);
+                if (currentUser != null)
+                {
+
+                    currentUser.Name = user.Name;
+                    currentUser.Surname = user.Surname;
+                    currentUser.Patronymic = user.Patronymic;
+                    currentUser.DateBirthday = user.DateBirthday;
+                    currentUser.NumberPhone = user.NumberPhone;
+                    currentUser.Sex = user.Sex;
+                    currentUser.Email = user.Email;
+                    db.SaveChanges();
+
+                    MessageBox.Show("Профиль успешно обновлен.");
+                    User_Profile_Window user_Profile = new User_Profile_Window();
+                    Close();
+                    user_Profile.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь не найден в базе данных.");
+                }
+            }
+
 
         }
+
+       
 
         private void btn_edit_image_Click(object sender, RoutedEventArgs e)
         {
