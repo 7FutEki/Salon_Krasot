@@ -69,6 +69,10 @@ namespace Salon_Krasot.Windows_Profiles
                     Close();
                     admin_Profile.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Сотрудник не найден в базе данных");
+                }
 
             }
         }
