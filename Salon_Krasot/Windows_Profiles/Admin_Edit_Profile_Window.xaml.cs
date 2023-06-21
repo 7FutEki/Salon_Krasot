@@ -28,7 +28,7 @@ namespace Salon_Krasot.Windows_Profiles
         private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
         {
             
-            Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window("a");
+            Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window();
             Close();
             admin_Profile_Window.ShowDialog();
         }

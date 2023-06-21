@@ -13,6 +13,7 @@ namespace Salon_Krasot.Models
         public DbSet<Product_Card> Products_Cards { get; set; }
         public DbSet<Product_Sale_History> Product_Sale_History { get; set;}
         public DbSet<User> Users { get; set; }
+        public DbSet<ForLogin> ForLogin { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -11,8 +11,12 @@
                 <ColumnDefinition Width="220"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-        <Image Width="200" Height="200" Source="\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,0,100" Grid.Column="0"/>
-            <Button HorizontalAlignment="Right" Content="Выйти" Grid.Column="1" VerticalAlignment="Top" x:Name="btn_exit_profile" Click="btn_exit_profile_Click" Margin="5" Background="#FFFF4A6D"/>
+        <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="32" Margin="5" x:Name="btn_exit" Click="btn_exit_profile_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Windows_Application_Menu/стрелка.png"/>
+            </Button.Background>
+        </Button>
+        <Image Width="200" Height="200" Source="\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,50,0,100" Grid.Column="0"/>
             <StackPanel Grid.Column="1" >
                 <TextBlock Text="Мои данные" FontSize="20" FontFamily="Tahoma" Margin="6,10,10,5" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 <TextBox Text="{Binding Surname}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>

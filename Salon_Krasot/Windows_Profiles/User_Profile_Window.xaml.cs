@@ -21,19 +21,22 @@ namespace Salon_Krasot.Windows_Profiles
     public partial class User_Profile_Window : Window 
     {
         public User user;
-        public User_Profile_Window(string login)
+        public User_Profile_Window()
         {
             user = new User();
             InitializeComponent();
             DataContext = user;
-            LoadProfile(login);
+            LoadProfile();
             
         }
 
-        private void LoadProfile(string login)
+        private void LoadProfile()
         {
             using (var db = new ApplicationContext())
             {
+                
+                var logins = db.ForLogin.ToList();
+                string login = logins.Last().Login;
                 var userprofile = db.Users.Where(x => x.Login == login);
                 foreach (var item in userprofile)
                 {

@@ -22,30 +22,33 @@
             <StackPanel Grid.Column="1" >
             <TextBlock Text="Мои данные" FontSize="20" FontFamily="Tahoma" Margin="6,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
             <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Surname}" FontFamily="Tahoma" FontSize="20" Height="40" Background="#FFE1E4FF" OpacityMask="Black"/>
+                <TextBlock Text="{Binding Surname}" x:Name="tb_surname" FontFamily="Tahoma" FontSize="20" Height="40" Background="#FFE1E4FF" OpacityMask="Black"/>
             </Border>
             <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40" Background="Black">
-                <TextBlock Text="{Binding Name}" FontFamily="Tahoma" FontSize="20"  Height="40" Background="#FFE1E4FF"/>
+                <TextBlock Text="{Binding Name}" x:Name="tb_name"  FontFamily="Tahoma" FontSize="20"  Height="40" Background="#FFE1E4FF"/>
             </Border>
             <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40" Background="Black">
-                <TextBlock Text="{Binding Patronymic}" FontFamily="Tahoma" FontSize="20"  Height="40" Background="#FFE1E4FF"/>
+                <TextBlock Text="{Binding Patronymic}" x:Name="tb_patronymic"  FontFamily="Tahoma" FontSize="20"  Height="40" Background="#FFE1E4FF"/>
             </Border>
             <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40" Background="Black">
-                <TextBlock Text="{Binding Passport}" FontFamily="Tahoma" FontSize="20"  Height="40" Background="#FFE1E4FF"/>
+                <TextBlock Text="{Binding Passport}" x:Name="tb_passport"  FontFamily="Tahoma" FontSize="20"  Height="40" Background="#FFE1E4FF"/>
             </Border>
             <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40" Background="Black">
-                <TextBlock Text="{Binding DivCode}" FontFamily="Tahoma" FontSize="20"   Height="40" Background="#FFE1E4FF"/>
+                <TextBlock Text="{Binding DivCode}" x:Name="tb_divcode"  FontFamily="Tahoma" FontSize="20"   Height="40" Background="#FFE1E4FF"/>
             </Border>
             <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding CoefZp}"  FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
+                <TextBlock Text="{Binding CoefZp}" x:Name="tb_coefzp"  FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
             </Border>
             <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding DateBirthday}" FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
+                <TextBlock Text="{Binding DateBirthday}" x:Name="tb_datebirth" FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
             </Border>
             <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Category}" FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
+                <TextBlock Text="{Binding Category}" x:Name="tb_category"  FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
             </Border>
-            <Button Content="Редактировать данные" x:Name="btn_edit_profile" Click="btn_edit_profile_Click" Margin="6,5,0,5" Background="#FFFF4A6D"/>
+                <Border BorderThickness="2" BorderBrush="Black" Width="300" Margin="5" HorizontalAlignment="Left" Height="40">
+                    <TextBlock Text="{Binding Sex}" x:Name="tb_sex"  FontFamily="Tahoma"  FontSize="20" Height="40" Background="#FFE1E4FF"/>
+                </Border>
+                <Button Content="Редактировать данные" x:Name="btn_edit_profile" Click="btn_edit_profile_Click" Margin="6,5,0,5" Background="#FFFF4A6D"/>
 
         </StackPanel>
         </ScrollViewer>

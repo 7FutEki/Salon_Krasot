@@ -21,13 +21,13 @@
         <Button HorizontalAlignment="Right" Content="Выйти из аккаунта" Grid.Column="1" VerticalAlignment="Top" x:Name="btn_exit_profile" Click="btn_exit_profile_Click" Margin="5" Background="#FFFF4A6D"/>
         <StackPanel Grid.Column="1" >
             <TextBlock Text="Мои данные" FontSize="20" FontFamily="Tahoma" Margin="6,10,10,5" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <TextBox IsReadOnly="True" Text="{Binding Surname}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox  IsReadOnly="True" Text="{Binding Name}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox IsReadOnly="True" Text="{Binding Patronymic}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox IsReadOnly="True" Text="{Binding DateBirthday}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox IsReadOnly="True" Text="{Binding NumberPhone}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox IsReadOnly="True" Text="{Binding Email}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox IsReadOnly="True" Text="{Binding Sex}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <TextBox IsReadOnly="True" Text="{Binding Surname}" x:Name="tb_surname" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <TextBox IsReadOnly="True" Text="{Binding Name}" x:Name="tb_name" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <TextBox IsReadOnly="True" Text="{Binding Patronymic}" x:Name="tb_patronymic" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <TextBox IsReadOnly="True" Text="{Binding DateBirthday}" x:Name="tb_datebirth" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <TextBox IsReadOnly="True" Text="{Binding NumberPhone}" x:Name="tb_numberphone" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <TextBox IsReadOnly="True" Text="{Binding Email}" x:Name="tb_email" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <TextBox IsReadOnly="True" Text="{Binding Sex}" x:Name="tb_sex" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
             <Button Content="Редактировать данные" Margin="80,20,0,100" x:Name="btn_edit_profile" Click="btn_edit_profile_Click" Background="#FFFF4A6D"/>
         </StackPanel>
 

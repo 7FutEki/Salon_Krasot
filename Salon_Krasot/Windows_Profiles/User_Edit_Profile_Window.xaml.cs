@@ -33,7 +33,7 @@ namespace Salon_Krasot.Windows_Profiles
 
         private void btn_exit_profile_Click(object sender, RoutedEventArgs e)
         {
-            User_Profile_Window user_Profile_Window = new User_Profile_Window("d");
+            User_Profile_Window user_Profile_Window = new User_Profile_Window();
             Close();
             user_Profile_Window.ShowDialog();
         }

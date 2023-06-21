@@ -18,21 +18,25 @@ namespace Salon_Krasot.Windows_Profiles
     /// <summary>
     /// Логика взаимодействия для Admin_Profile_Window.xaml
     /// </summary>
+    /// 
+    
     public partial class Admin_Profile_Window : Window
     {
         Admin admin { get; set; }
-        public Admin_Profile_Window(string login)
+        public Admin_Profile_Window()
         {
             admin = new Admin();
             InitializeComponent();
             DataContext = admin;
-            LoadProfile(login);
+            LoadProfile();
         }
 
-        private void LoadProfile(string login)
+        private void LoadProfile()
         {
             using (var db = new ApplicationContext())
             {
+                var logins = db.ForLogin.ToList();
+                string login = logins.Last().Login;
                 var userprofile = db.Admins.Where(x => x.Login == login);
                 foreach (var item in userprofile)
                 {
@@ -44,7 +48,7 @@ namespace Salon_Krasot.Windows_Profiles
                     admin.Sex = item.Sex;
                     admin.CoefZp = item.CoefZp;
                     admin.DivCode = item.DivCode;
-                    admin.Category= item.Category;
+                    admin.Category = item.Category;
                 }
             }
         }

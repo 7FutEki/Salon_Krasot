@@ -74,9 +74,15 @@ namespace Salon_Krasot
                     {
                         loginforprofile = item.Login;
                     }
+                    ForLogin forLogin = new ForLogin()
+                    {
+                        Login = loginforprofile
+                    };
+                    db.ForLogin.Add(forLogin);
+                    db.SaveChanges();
                     
 
-                    User_Profile_Window user_Profile_Window = new User_Profile_Window(loginforprofile);
+                    User_Profile_Window user_Profile_Window = new User_Profile_Window();
                     user_Profile_Window.Show();
                     Close();
                 }
@@ -88,7 +94,14 @@ namespace Salon_Krasot
                     {
                         loginprofile2= item.Login;
                     }
-                    Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window(loginprofile2);
+                    ForLogin forLogin = new ForLogin()
+                    {
+                        Login = loginprofile2
+                    };
+                    db.ForLogin.Add(forLogin);
+                    db.SaveChanges();
+
+                    Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window();
                     admin_Profile_Window.Show();
                     Close();
                 }
