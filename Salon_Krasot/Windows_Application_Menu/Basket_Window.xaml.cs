@@ -25,7 +25,6 @@ namespace Salon_Krasot.Windows_Application_Menu
         public Basket_Window()
         {
             InitializeComponent();
-            Products = new ObservableCollection<Product_Card>();
             DataContext = this;
             LoadBasket();
         }
@@ -37,20 +36,26 @@ namespace Salon_Krasot.Windows_Application_Menu
                 string login = logins.Last().Login;
                 var basket_Product_Cards = db.Basket_Product_Cards.Where(x => x.Login == login).ToList();
 
-                List<Product_Card> ba = new List<Product_Card>();
+                List<Product_Card> basket_product = new List<Product_Card>();
 
                 foreach (var item in basket_Product_Cards)
                 {
                     var s = db.Products_Cards.Where(y => y.Title == item.Title).ToList();
                     foreach (var card in s)
                     {
-                        ba.Add(card);
+                        basket_product.Add(card);
                     }
                 }
 
-                Products = new ObservableCollection<Product_Card>(ba);
+                Products = new ObservableCollection<Product_Card>(basket_product);
+                
                 foreach (var photo in Products)
                 {
+                    if (photo.Photo.Length ==58)
+                    {
+                        continue;
+                    }
+                    else
                     photo.Photo = $"pack://application:,,,/{photo.Photo}";
                 }
 
