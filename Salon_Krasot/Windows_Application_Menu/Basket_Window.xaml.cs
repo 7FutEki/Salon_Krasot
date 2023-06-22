@@ -31,34 +31,49 @@ namespace Salon_Krasot.Windows_Application_Menu
         }
         private void LoadBasket()
         {
-            //using (var db = new ApplicationContext())
-            //{
-            //    var logins = db.ForLogin.ToList();
-            //    string login = logins.Last().Login;
-                
-                
-            //        var basket_Product_Cards = db.Basket_Product_Cards.Where(x => x.Login == login).ToList();
-            //        foreach (var item in basket_Product_Cards)
-            //        {
-            //            List<Product_Card> ba = new List<Product_Card>();
-            //            var s = db.Products_Cards.Where(y => y.Title == item.Title);
-            //            foreach (var card in s)
-            //            {
-            //                ba.Add(card);
-            //            }
-            //        //var s = db.Products_Cards.Where(y => y.Title == item.Title).ToList();
+            using (var db = new ApplicationContext())
+            {
+                var logins = db.ForLogin.ToList();
+                string login = logins.Last().Login;
+                var basket_Product_Cards = db.Basket_Product_Cards.Where(x => x.Login == login).ToList();
 
-            //        //Basket_lb.Items.Add(ba);
-            //            Basket_lb.Items.Add(ba);
-            //    }
-            //        foreach (var photo in Products)
-            //        {
-            //            photo.Photo = $"pack://application:,,,/{photo.Photo}";
-            //            //Фотографии не выводятся(
-            //        }
-                    
-                
-            //}
+                List<Product_Card> ba = new List<Product_Card>();
+
+                foreach (var item in basket_Product_Cards)
+                {
+                    var s = db.Products_Cards.Where(y => y.Title == item.Title).ToList();
+                    foreach (var card in s)
+                    {
+                        ba.Add(card);
+                    }
+                }
+
+                Products = new ObservableCollection<Product_Card>(ba);
+                foreach (var photo in Products)
+                {
+                    photo.Photo = $"pack://application:,,,/{photo.Photo}";
+                }
+
+
+
+
+
+                //foreach (var item in basket_Product_Cards)
+                //{
+                //    var s = db.Products_Cards.Where(y => y.Title == item.Title);
+                //    foreach (var card in s)
+                //    {
+                //        ba.Add(card);
+                //    }
+                //    //var s = db.Products_Cards.Where(y => y.Title == item.Title).ToList();
+
+                //    //Basket_lb.Items.Add(ba);
+                //    Basket_lb.Items.Add(ba);
+                //}
+
+
+
+            }
         }
        
 
