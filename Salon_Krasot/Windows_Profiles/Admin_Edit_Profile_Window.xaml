@@ -17,18 +17,28 @@
             </Button.Background>
         </Button>
         <Image Width="200" Height="200" Source="\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,50,0,100" Grid.Column="0"/>
-        <ScrollViewer Grid.Column="1">
-            <StackPanel Grid.Column="1" >
-            <TextBlock Text="Мои данные" FontSize="20" FontFamily="Tahoma" Margin="6,10,10,5" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <TextBox Text="{Binding Surname}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox Text="{Binding Name}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox Text="{Binding Patronymic}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox Text="{Binding Passport}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox Text="{Binding DivCode}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox Text="{Binding  CoefZp}" IsReadOnly="True" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox Text="{Binding DateBirthday}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <TextBox Text="{Binding Category}" IsReadOnly="True" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <Button Content="Сохранить измененные данные" x:Name="save_edit_profile" Click="save_edit_profile_Click" Margin="6,0,0,5" Background="#FFFF4A6D"/>
+        <ScrollViewer Grid.Column="3">
+            <StackPanel Grid.Column="3" >
+                <TextBlock Text="Мои данные" FontSize="20" FontFamily="Tahoma" Margin="6,10,10,5" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBlock Text="Фамилия" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding Surname}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBlock Text="Имя" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding Name}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBlock Text="Отчество" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding Patronymic}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBlock Text="Паспорт" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding Passport}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBlock Text="Код подразделения" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding DivCode}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBlock Text="Коэффициент зарплаты" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding  CoefZp}" IsReadOnly="True" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBlock Text="Дата рождения" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding DateBirthday}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBlock Text="Категория" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding Category}" IsReadOnly="True" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBlock Text="Пол" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding Sex}" IsReadOnly="True" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <Button Content="Сохранить измененные данные" x:Name="save_edit_profile" Click="save_edit_profile_Click" Margin="6,0,0,5" Background="#FFFF4A6D"/>
         </StackPanel>
         </ScrollViewer>
         <Button Content="Изменить фотографию" x:Name="btn_edit_image" Click="btn_edit_image_Click" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,110" Width="200" Background="#FFFF4A6D" />

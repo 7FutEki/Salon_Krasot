@@ -36,9 +36,10 @@ namespace Salon_Krasot.Windows_Application_Menu
         private void LoadProducts()
         {
             Products = new ObservableCollection<Product_Card>(dbContext.Products_Cards.ToList());
+            
             foreach (var photo in Products)
             {
-                photo.Photo = $"/Product_Image/{photo.Photo}";
+                photo.Photo = $"pack://application:,,,/{photo.Photo}";
                 //Фотографии не выводятся(
             }
         }
@@ -51,6 +52,7 @@ namespace Salon_Krasot.Windows_Application_Menu
             Close();
             product_Main_Part_GUEST_Window.ShowDialog();
             }
+            
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)

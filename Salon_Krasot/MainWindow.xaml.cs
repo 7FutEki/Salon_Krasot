@@ -82,8 +82,8 @@ namespace Salon_Krasot
                     db.SaveChanges();
                     
 
-                    User_Profile_Window user_Profile_Window = new User_Profile_Window();
-                    user_Profile_Window.Show();
+                    User_Main_Part_Window user_Main_Part_Window = new User_Main_Part_Window();
+                    user_Main_Part_Window.Show();
                     Close();
                 }
                 else if (admin != null)
@@ -101,8 +101,8 @@ namespace Salon_Krasot
                     db.ForLogin.Add(forLogin);
                     db.SaveChanges();
 
-                    Admin_Profile_Window admin_Profile_Window = new Admin_Profile_Window();
-                    admin_Profile_Window.Show();
+                    Admin_Main_Part_Window admin_Main_Part_Window = new Admin_Main_Part_Window();
+                    admin_Main_Part_Window.Show();
                     Close();
                 }
                 else

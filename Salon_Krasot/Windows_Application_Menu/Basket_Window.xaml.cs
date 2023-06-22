@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 using Salon_Krasot.Models;
 namespace Salon_Krasot.Windows_Application_Menu
 {
@@ -25,17 +26,29 @@ namespace Salon_Krasot.Windows_Application_Menu
         {
             InitializeComponent();
             Products = new ObservableCollection<Product_Card>();
-            Basket_lb.ItemsSource = Products;
-
-            Products.Add(new Product_Card { Title = "ТЕСТ", Price = 999 });
-            Products.Add(new Product_Card { Title = "Тест", Price = 849 });
-            Products.Add(new Product_Card { Title = "ТеСт", Price = 1312 });
-            Products.Add(new Product_Card { Title = "Туз", Price = 5435 });
-            Products.Add(new Product_Card { Title = "Тестирование", Price = 4234 });
-            Products.Add(new Product_Card { Title = "Снова тестирование", Price = 3132 });
-            Products.Add(new Product_Card { Title = "Черт побери, откуда тут взялся туз¿", Price = 3132 });
+            DataContext = this;
+            LoadBasket();
         }
+        private void LoadBasket()
+        {
+            using (var db = new ApplicationContext())
+            {
+                var logins = db.ForLogin.ToList();
+                string login = logins.Last().Login;
+                var basket_Product_Cards = db.Basket_Product_Cards.Where(x => x.Login == login);
+                foreach (var item in basket_Product_Cards)
+                {
+                    var ba = db.Products_Cards.Where(y=>y.Title == item.Title);
+                    Products = new ObservableCollection<Product_Card>(ba.ToList());
 
+                }
+                foreach (var photo in Products)
+                {
+                    photo.Photo = $"pack://application:,,,/{photo.Photo}";
+                    //Фотографии не выводятся(
+                }
+            }
+        }
        
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)

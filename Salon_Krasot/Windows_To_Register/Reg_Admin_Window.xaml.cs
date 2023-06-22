@@ -43,7 +43,7 @@ namespace Salon_Krasot.Windows_To_Register
                 MessageBox.Show("Необходимо минимум 8 символов");
                 
             }
-            else 
+            else  
             {
                 Admin admin = new Admin()
                 {
@@ -51,14 +51,30 @@ namespace Salon_Krasot.Windows_To_Register
                     Password = password
                 };
 
-                dbContext.Admins.Add(admin);
-                dbContext.SaveChanges();
+                using (var db = new ApplicationContext())
+                {
+                    var checkadmin = db.Admins.FirstOrDefault(x => x.Login == login && x.Password == password);
+                    var checkuser = db.Users.FirstOrDefault(x => x.Login == login && x.Password == password);
+                    if (checkadmin != null)
+                    {
+                        MessageBox.Show("Имя занято");
+                    }
+                    else if (checkuser != null)
+                    {
+                        MessageBox.Show("Имя занято");
+                    }
+                    else
+                    {
+                        dbContext.Admins.Add(admin);
+                        dbContext.SaveChanges();
 
-                MessageBox.Show("Сотрудник зарегистрирован.");
+                        MessageBox.Show("Сотрудник зарегистрирован.");
 
-                MainWindow mainWindow = new MainWindow();
-                Close();
-                mainWindow.ShowDialog();
+                        MainWindow mainWindow = new MainWindow();
+                        Close();
+                        mainWindow.ShowDialog();
+                    }
+                }
                 
             }
 

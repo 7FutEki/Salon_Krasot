@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Profiles"
         mc:Ignorable="d"
-        Title="Профиль" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Профиль" Height="580" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
@@ -53,8 +53,6 @@
         </StackPanel>
         </ScrollViewer>
         <Button HorizontalAlignment="Right" Content="Выйти из аккаунта" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" x:Name="btn_exit_profile" Click="btn_exit_profile_Click" Margin="5,5,20,5" Background="#FFFF4A6D"/>
-
-        <Button Content="Изменить фотографию" x:Name="btn_edit_image" Click="btn_edit_image_Click" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,110" Width="200" Background="#FFFF4A6D" />
 
     </Grid>
 </Window>

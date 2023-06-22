@@ -18,6 +18,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Имя администратора:" Margin="59,23,59,71" Grid.Row="3" Grid.Column="0" Height="20" Grid.ColumnSpan="2" FontFamily="Tahoma"/>
