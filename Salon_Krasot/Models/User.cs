@@ -23,7 +23,7 @@ namespace Salon_Krasot.Models
         public string? Email { get; set; }
         public string? Sex { get; set; }
         public string? DateFirstVisit { get; set; }
-        public byte? Photo { get; set; }
+        public byte[]? Photo { get; set; }
 
     }
 }

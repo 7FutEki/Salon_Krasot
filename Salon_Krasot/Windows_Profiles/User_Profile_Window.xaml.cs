@@ -40,6 +40,7 @@ namespace Salon_Krasot.Windows_Profiles
                 var userprofile = db.Users.Where(x => x.Login == login);
                 foreach (var item in userprofile)
                 {
+                    user.Photo= item.Photo;
                     user.Login = item.Login; /// не трогать!!!
                     user.Password= item.Password; /// это тоже!!!
                     user.Name = item.Name;

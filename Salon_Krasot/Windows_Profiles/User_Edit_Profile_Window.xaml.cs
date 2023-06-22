@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using Salon_Krasot.Models;
 
 namespace Salon_Krasot.Windows_Profiles
@@ -44,7 +46,7 @@ namespace Salon_Krasot.Windows_Profiles
                 var currentUser = db.Users.FirstOrDefault(u => u.Login == user.Login);
                 if (currentUser != null)
                 {
-
+                    currentUser.Photo = user.Photo;
                     currentUser.Name = user.Name;
                     currentUser.Surname = user.Surname;
                     currentUser.Patronymic = user.Patronymic;
@@ -72,7 +74,20 @@ namespace Salon_Krasot.Windows_Profiles
 
         private void btn_edit_image_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg, *.png, *.jpeg)|*.jpg;*.png;*.jpeg";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string imagePath = openFileDialog.FileName;
+                byte[] imageData = File.ReadAllBytes(imagePath);
+                user.Photo = imageData;
 
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = new MemoryStream(imageData);
+                bitmapImage.EndInit();
+                userImage.Source = bitmapImage;
+            }
         }
         
     }
