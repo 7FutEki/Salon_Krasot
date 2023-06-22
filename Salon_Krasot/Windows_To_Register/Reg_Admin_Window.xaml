@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_To_Register"
         mc:Ignorable="d"
-         Height="400" Icon="/beauty_logo.png" Width="350" WindowStartupLocation="CenterScreen">
+         Height="450" Icon="/beauty_logo.png" Width="350" WindowStartupLocation="CenterScreen">
     <Grid>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -21,20 +22,27 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Имя администратора:" Margin="59,23,59,71" Grid.Row="3" Grid.Column="0" Height="20" Grid.ColumnSpan="2" FontFamily="Tahoma"/>
-        <TextBox x:Name="login_tb" Margin="59,42,59,37" Grid.ColumnSpan="2" Height="35" Grid.Row="3"/>
+        <TextBlock Text="Имя администратора:" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="0" Height="20" FontFamily="Tahoma"/>
+        <TextBox x:Name="login_tb" HorizontalAlignment="Center" Height="20" Width="230" Grid.Row="1" FontFamily="Tahoma"/>
 
-        <TextBlock Text="Пароль:" Grid.Row="3" Grid.Column="0" Margin="59,94,59,0" Height="20" Grid.ColumnSpan="2" FontFamily="Tahoma"/>
-        <PasswordBox x:Name="password_pb" Grid.Row="3" Margin="59,114,59,-35" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
+        <TextBlock Text="Введите пароль: " HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="2" Height="20" FontFamily="Tahoma" />
+        <PasswordBox x:Name="password_pb" Grid.Row="3"  Height="35" Width="230" FontFamily="Tahoma"/>
 
-        <TextBlock Text="Повторите пароль:" Grid.Row="3" Grid.Column="0" Margin="59,163,59,-69" Grid.ColumnSpan="2" Height="20" FontFamily="Tahoma"/>
-        <PasswordBox x:Name="repeat_password" Grid.Row="3" Margin="59,183,59,-104" Grid.ColumnSpan="2" Height="35" FontFamily="Tahoma"/>
+        <TextBlock Text="Повторите пароль: " HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="4" Height="20" FontFamily="Tahoma"/>
+        <PasswordBox x:Name="repeat_password" Grid.Row="5" Height="35" Width="230" FontFamily="Tahoma"/>
 
+        <TextBlock Text="Коэффициент зарплаты:" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="6" Height="20" FontFamily="Tahoma"/>
+        <TextBox x:Name="coef_tb" HorizontalAlignment="Center" Height="20" Width="230" Grid.Row="7" FontFamily="Tahoma"/>
 
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3" Margin="0,249,0,-249" Grid.Column="1" Width="324">
-            <Button Content="Зарегистрировать" x:Name="reg_btn" Click="reg_btn_Click" Width="232" Margin="45,1,22,83" Background="#FFFF4A6D" TextBlock.FontFamily="Tahoma"/>
-            <Button Content="Назад" x:Name="out_btn" Click="out_btn_Click" Width="232"  Margin="-254,1,2,5" Background="#FFFF4A6D" TextBlock.FontFamily="Tahoma"/>
+        <TextBlock Text="Категория сотрудника:" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="8" Height="20" FontFamily="Tahoma"/>
+        <TextBox x:Name="category_tb" HorizontalAlignment="Center" Height="20" Width="230" Grid.Row="9" FontFamily="Tahoma"/>
+
+        <StackPanel HorizontalAlignment="Center" Margin="10" Orientation="Vertical" Grid.Row="10">
+            <Button Content="Зарегистрировать" x:Name="reg_btn" Click="reg_btn_Click" Margin="5" Width="232"  Background="#FFFF4A6D" TextBlock.FontFamily="Tahoma"/>
+            <Button Content="Назад" x:Name="out_btn" Click="out_btn_Click" Width="232" Margin="5,0,5,5"  Background="#FFFF4A6D" TextBlock.FontFamily="Tahoma"/>
+
         </StackPanel>
+
 
     </Grid>
 </Window>

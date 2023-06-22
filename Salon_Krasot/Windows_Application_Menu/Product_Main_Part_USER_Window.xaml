@@ -27,8 +27,8 @@
 
         <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,45,0,0">
             <TextBlock Text="Имя товара" FontSize="20" FontFamily="Tahoma" Width="120"  HorizontalAlignment="Left"/>
-            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="40">
-                <TextBlock Text="{Binding Title}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" Background="#FFE1E4FF"  />
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="Auto">
+                <TextBlock Text="{Binding Title}" FontSize="20" FontFamily="Tahoma" TextWrapping="Wrap" HorizontalAlignment="Left" Width="300" Height="Auto" TextAlignment="Center" Background="#FFE1E4FF"  />
             </Border>
             <TextBlock Text="Изготовитель товара" FontSize="20" FontFamily="Tahoma" Width="130"  HorizontalAlignment="Left"/>
             <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="40">
@@ -40,8 +40,8 @@
                 <TextBlock Text="{Binding Price}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" Background="#FFE1E4FF"  />
             </Border>
             <TextBlock Text="Описание товара" FontSize="20" FontFamily="Tahoma" Width="200" HorizontalAlignment="Left"/>
-            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="100">
-                <TextBlock Text="{Binding Description}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="100" Background="#FFE1E4FF" />
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="Auto">
+                <TextBlock Text="{Binding Description}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="Auto" Background="#FFE1E4FF" />
             </Border>
         </StackPanel>
 

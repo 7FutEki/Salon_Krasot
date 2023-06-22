@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Profiles"
         mc:Ignorable="d"
-        Title="Редактирование профиля" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Редактирование профиля" Height="580" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
@@ -37,10 +37,9 @@
                 <TextBlock Text="Категория" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 <TextBox Text="{Binding Category}" IsReadOnly="True" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
                 <TextBlock Text="Пол" FontSize="20" FontFamily="Tahoma"  Margin="6,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <TextBox Text="{Binding Sex}" IsReadOnly="True" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+                <TextBox Text="{Binding Sex}" Margin="6" FontFamily="Tahoma" FontSize="20" Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
                 <Button Content="Сохранить измененные данные" x:Name="save_edit_profile" Click="save_edit_profile_Click" Margin="6,0,0,5" Background="#FFFF4A6D"/>
         </StackPanel>
         </ScrollViewer>
-        <Button Content="Изменить фотографию" x:Name="btn_edit_image" Click="btn_edit_image_Click" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,110" Width="200" Background="#FFFF4A6D" />
     </Grid>
 </Window>

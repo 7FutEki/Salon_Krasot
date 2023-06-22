@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Salon_Krasot.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Salon_Krasot.Windows_Application_Menu
 {
@@ -23,23 +24,33 @@ namespace Salon_Krasot.Windows_Application_Menu
     /// </summary>
     public partial class Admin_Main_Part_Window : Window
     {
+        Product_Card product { get; set; }
+        ApplicationContext dbContext;
+        Product_Card SelectedProduct { get; set; }
         public ObservableCollection<Product_Card> Products { get; set; }
 
         public Admin_Main_Part_Window()
         {
+            product = new Product_Card();
+            SelectedProduct = new Product_Card();
             InitializeComponent();
             Products = new ObservableCollection<Product_Card>();
-            Katalog_lb.ItemsSource = Products;
-
-            Products.Add(new Product_Card { Title = "ТЕСТ", Price = 999 });
-            Products.Add(new Product_Card { Title = "Тест", Price = 849 });
-            Products.Add(new Product_Card { Title = "ТеСт", Price = 1312 });
-            Products.Add(new Product_Card { Title = "Туз", Price = 5435 });
-            Products.Add(new Product_Card { Title = "Тестирование", Price = 4234 });
-            Products.Add(new Product_Card { Title = "Снова тестирование", Price = 3132 });
-            Products.Add(new Product_Card { Title = "Черт побери, откуда тут взялся туз¿", Price = 3132 });
+            dbContext = new ApplicationContext();
+            DataContext = this;
+            LoadProducts();
+         
         }
-        
+
+        private void LoadProducts()
+        {
+            Products = new ObservableCollection<Product_Card>(dbContext.Products_Cards.ToList());
+
+            foreach (var photo in Products)
+            {
+                photo.Photo = $"pack://application:,,,/{photo.Photo}";
+                //Фотографии не выводятся(
+            }
+        }
 
         private void btn_profile_Click(object sender, RoutedEventArgs e)
         {
@@ -57,9 +68,14 @@ namespace Salon_Krasot.Windows_Application_Menu
 
         private void btn_choose_Click(object sender, RoutedEventArgs e)
         {
-            Product_Main_Window product_Main_Window = new Product_Main_Window();
-            Close();
-            product_Main_Window.ShowDialog();
+            if (Katalog_lb.SelectedItem is Product_Card SelectedProduct)
+            {
+                Product_Main_Window product_Main_Window = new Product_Main_Window(SelectedProduct);
+                Close();
+                product_Main_Window.ShowDialog();
+            }
+
+           
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
@@ -67,6 +83,14 @@ namespace Salon_Krasot.Windows_Application_Menu
             Add_Product_Window add_Product_Window= new Add_Product_Window();
             Close();
             add_Product_Window.ShowDialog();
+        }
+
+        private void search_tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = search_tb.Text.ToLower();
+            var searchProducts = dbContext.Products_Cards.Where(p => p.Title.ToLower().Contains(searchText)).ToList();
+            Products = new ObservableCollection<Product_Card>(searchProducts);
+            Katalog_lb.ItemsSource = Products;
         }
     }
 }

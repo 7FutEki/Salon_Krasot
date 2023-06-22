@@ -32,6 +32,8 @@ namespace Salon_Krasot.Windows_To_Register
             string login = login_tb.Text;
             string password = password_pb.Password;
             string confirmPassword = repeat_password.Password;
+            double coef_zp = Convert.ToDouble(coef_tb.Text);
+            string category = category_tb.Text;
 
             if (password != confirmPassword)
             {
@@ -48,7 +50,9 @@ namespace Salon_Krasot.Windows_To_Register
                 Admin admin = new Admin()
                 {
                     Login = login,
-                    Password = password
+                    Password = password,
+                    CoefZp = coef_zp,
+                    Category = category
                 };
 
                 using (var db = new ApplicationContext())

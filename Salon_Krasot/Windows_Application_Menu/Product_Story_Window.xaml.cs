@@ -22,6 +22,7 @@ namespace Salon_Krasot.Windows_Application_Menu
     public partial class Product_Story_Window : Window
     {
         private ApplicationContext dbContext;
+        Product_Card product = new Product_Card();
         public ObservableCollection<Product_Sale_History> Products { get; set; }
         public Product_Story_Window()
         {
@@ -32,7 +33,7 @@ namespace Salon_Krasot.Windows_Application_Menu
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
-            Product_Main_Window product_Main_Window = new Product_Main_Window();
+            Product_Main_Window product_Main_Window = new Product_Main_Window(product);
             Close();
             product_Main_Window.ShowDialog();
         }

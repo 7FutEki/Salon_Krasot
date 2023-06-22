@@ -1,4 +1,5 @@
-﻿using Salon_Krasot.Windows_Product_Mahinations;
+﻿using Salon_Krasot.Models;
+using Salon_Krasot.Windows_Product_Mahinations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,13 @@ namespace Salon_Krasot.Windows_Application_Menu
     /// </summary>
     public partial class Product_Main_Window : Window
     {
-        public Product_Main_Window()
+        public Product_Main_Window(Product_Card product)
         {
             InitializeComponent();
+            DataContext = product;
         }
+
+       
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
         {
