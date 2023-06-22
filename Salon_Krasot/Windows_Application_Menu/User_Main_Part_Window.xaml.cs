@@ -70,9 +70,12 @@ namespace Salon_Krasot.Windows_Application_Menu
            
         }
 
-
-
-
-        
+        private void search_tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = search_tb.Text.ToLower();
+            var searchProducts = dbContext.Products_Cards.Where(p => p.Title.ToLower().Contains(searchText)).ToList();
+            Products = new ObservableCollection<Product_Card>(searchProducts);
+            Katalog_lb.ItemsSource = Products;
+        }
     }
 }

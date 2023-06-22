@@ -30,6 +30,8 @@ namespace Salon_Krasot
             InitializeComponent();
             ApplicationContext db = new ApplicationContext();
             db.Database.Migrate();
+            this.KeyDown += authorization_btn_KeyDown;
+
         }
 
         private void reg_admin_btn_Click(object sender, RoutedEventArgs e)
@@ -110,6 +112,14 @@ namespace Salon_Krasot
                     MessageBox.Show("Неправильный логин или пароль!");
                 }
 
+            }
+        }
+
+        private void authorization_btn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                authorization_btn_Click(sender, e);
             }
         }
     }

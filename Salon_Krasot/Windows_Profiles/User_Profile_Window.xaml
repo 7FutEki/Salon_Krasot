@@ -17,7 +17,6 @@
             </Button.Background>
         </Button>
         <Image Width="200" Height="200" Source="\beauty_logo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,50,0,100" Grid.Column="0"/>
-        <Button Grid.Column="0" HorizontalAlignment="Center" Content="Изменить фотографию" Background="#FFFF4A6D" Margin="0,150,0,0"/>
         <Button HorizontalAlignment="Right" Content="Выйти из аккаунта" Grid.Column="1" VerticalAlignment="Top" x:Name="btn_exit_profile" Click="btn_exit_profile_Click" Margin="5" Background="#FFFF4A6D"/>
         <StackPanel Grid.Column="1" >
             <TextBlock Text="Мои данные" FontSize="20" FontFamily="Tahoma" Margin="6,10,10,5" VerticalAlignment="Top" HorizontalAlignment="Left"/>

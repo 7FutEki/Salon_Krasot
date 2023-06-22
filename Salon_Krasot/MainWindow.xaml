@@ -27,7 +27,7 @@
         <PasswordBox x:Name="password_pb"  Grid.Row="3" Grid.Column="1" Margin="36,232,36,132" Height="35" FontFamily="Tahoma"/>
 
 
-        <Button Content="Авторизация" x:Name="authorization_btn" Click="authorization_btn_Click" Width="150" Grid.Row="3" Margin="36,279,194,0" Grid.Column="0" Background="#FFFF4A6D" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="32" FontFamily="Tahoma"/>
+        <Button Content="Авторизация" KeyDown="authorization_btn_KeyDown" x:Name="authorization_btn" Click="authorization_btn_Click" Width="150" Grid.Row="3" Margin="36,279,194,0" Grid.Column="0" Background="#FFFF4A6D" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="32" FontFamily="Tahoma"/>
         <Button Content="Зарегистрироваться" x:Name="reg_user_btn" Click="reg_user_btn_Click" Width="150" Margin="194,279,36,0" Grid.Row="3" Grid.Column="0" Background="#FFFF4A6D" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="32" FontFamily="Tahoma"/>
         <Button Content="Продолжить, как гость" Name="continue_btn" Click="continue_btn_Click" Margin="0,356,0,0" Grid.Row="3" Width="244" VerticalAlignment="Top" Height="32" FontFamily="Tahoma" Background="#00000000" Grid.Column="1" HorizontalAlignment="Center"/>
         <Button Content="Зарегистрировать администратора" Name="reg_admin_btn" Click="reg_admin_btn_Click" ToolTip="Необходим ключ, без него не зарегистрируешь" Margin="0,319,0,0" Grid.Row="3" Width="308" Background="#FFFF4A6D" VerticalAlignment="Top" Height="32" FontFamily="Tahoma" Grid.Column="1" HorizontalAlignment="Center"/>

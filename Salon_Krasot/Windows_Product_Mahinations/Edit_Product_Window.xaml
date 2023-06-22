@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Product_Mahinations"
         mc:Ignorable="d"
-        Title="Редактирование товара" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Редактирование товара" Height="520" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
@@ -25,12 +25,23 @@
 
         <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,45,0,0">
             <TextBlock Text="Имя товара" FontSize="20" FontFamily="Tahoma" Width="120"  HorizontalAlignment="Left"/>
-            <TextBox Text="{Binding Title}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40"  BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="Auto">
+                <TextBox Text="{Binding Title}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="Auto" TextWrapping="Wrap" TextAlignment="Center" Background="#FFE1E4FF"  />
+            </Border>
             <TextBlock Text="Изготовитель товара" FontSize="20" FontFamily="Tahoma" Width="130"  HorizontalAlignment="Left"/>
-            <TextBox Text="{Binding Manufacturer}"  FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="40">
+                <TextBox Text="{Binding Manufacturer}"  FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" Background="#FFE1E4FF" />
+            </Border>
+            <CheckBox Content="Активен\Неактивен" FontFamily="Tahoma" IsEnabled="True" FontSize="20" IsChecked="{Binding Active}" />
+            <!--здесь надо писать не "да, нет", а 0 или 1-->
             <TextBlock Text="Цена товара" FontSize="20" FontFamily="Tahoma" Width="130"  HorizontalAlignment="Left"/>
-            <TextBox Text="{Binding Price}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40"  BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
-            <CheckBox Content="Активен\Неактивен" FontFamily="Tahoma" FontSize="20" />
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="40">
+                <TextBox Text="{Binding Price}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" Background="#FFE1E4FF"  />
+            </Border>
+            <TextBlock Text="Описание товара" FontSize="20" FontFamily="Tahoma" Width="200" HorizontalAlignment="Left"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="Auto">
+                <TextBox Text="{Binding Description}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="Auto" Background="#FFE1E4FF" />
+            </Border>
         </StackPanel>
 
         <StackPanel Grid.Row="0">
@@ -42,7 +53,5 @@
 
         <Button Grid.Column="1" Grid.Row="1" Content="Изменить товар" Margin="10" x:Name="btn_add_product" Click="btn_add_product_Click" Background="#FFFF4A6D"/>
 
-
-        <!--окна карточки с кнопками редактирования и удаления и просмотра истории автоматически в виде листобкса-->
     </Grid>
 </Window>

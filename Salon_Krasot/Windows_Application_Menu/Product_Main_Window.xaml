@@ -34,7 +34,7 @@
             <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="40">
                 <TextBlock Text="{Binding Manufacturer}"  FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" TextAlignment="Center" Background="#FFE1E4FF" />
             </Border>
-            <CheckBox Content="Активен\Неактивен" FontFamily="Tahoma" FontSize="20" IsChecked="{Binding Active}" />
+            <CheckBox Content="Активен\Неактивен" FontFamily="Tahoma" IsEnabled="False" FontSize="20" IsChecked="{Binding Active}" />
             <!--здесь надо писать не "да, нет", а 0 или 1-->
             <TextBlock Text="Цена товара" FontSize="20" FontFamily="Tahoma" Width="130"  HorizontalAlignment="Left"/>
             <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="40">

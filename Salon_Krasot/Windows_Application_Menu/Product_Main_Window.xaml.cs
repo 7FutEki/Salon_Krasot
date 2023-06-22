@@ -1,4 +1,5 @@
-﻿using Salon_Krasot.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Salon_Krasot.Models;
 using Salon_Krasot.Windows_Product_Mahinations;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,11 @@ namespace Salon_Krasot.Windows_Application_Menu
     /// <summary>
     /// Логика взаимодействия для Product_Main_Window.xaml
     /// </summary>
+
     public partial class Product_Main_Window : Window
     {
+        
+
         public Product_Main_Window(Product_Card product)
         {
             InitializeComponent();
@@ -31,14 +35,30 @@ namespace Salon_Krasot.Windows_Application_Menu
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
         {
-            Edit_Product_Window edit_Product_Window = new Edit_Product_Window();
+            Edit_Product_Window edit_Product_Window = new Edit_Product_Window((Product_Card)DataContext);
             Close();
             edit_Product_Window.ShowDialog();
         }
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
-        {
+        {   
+            var deleteProduct = (Product_Card)DataContext;
+            using (var context = new ApplicationContext())
+            {
+                var productDelete = context.Products_Cards.FirstOrDefault(p => p.Id == deleteProduct.Id);
 
+                if (productDelete != null)
+                {
+                    context.Products_Cards.Remove(productDelete);
+                    context.SaveChanges();
+
+                    MessageBox.Show("Продукт успешно удален из базы данных.");
+                }
+                Admin_Main_Part_Window window = new Admin_Main_Part_Window();
+                Close();
+                window.Show();
+
+            }
         }
 
         private void btn_story_Click(object sender, RoutedEventArgs e)
