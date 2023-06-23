@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Application_Menu"
         mc:Ignorable="d"
         Title="Главное меню" Height="650" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <local:PhotoConverter x:Key="PhotoConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="501*"/>
@@ -37,7 +40,14 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Image Source="{Binding Photo}" Height="200" Width="200"/>
+                        <Image Width="200" Height="200">
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource PhotoConverter}">
+                                    <Binding Path="PhotoByte"/>
+                                    <Binding Path="Photo"/>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
                         <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Grid.Row="1" Margin="0,5,0,0"/>
                         <TextBlock Text="{Binding Price}" Grid.Row="2" Margin="0,5,0,0"/>
                     </Grid>

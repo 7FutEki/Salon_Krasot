@@ -1,7 +1,9 @@
-﻿using Salon_Krasot.Models;
+﻿using Microsoft.Win32;
+using Salon_Krasot.Models;
 using Salon_Krasot.Windows_Application_Menu;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,7 @@ namespace Salon_Krasot.Windows_Product_Mahinations
     /// </summary>
     public partial class Edit_Product_Window : Window
     {
+        private Product_Card product;
         public Edit_Product_Window(Product_Card editProduct)
         {
             InitializeComponent();
@@ -43,6 +46,7 @@ namespace Salon_Krasot.Windows_Product_Mahinations
                 Product_Card editProduct = dbContext.Products_Cards.FirstOrDefault(p => p.Id == editedProduct.Id);
                 if (editProduct!=null)
                 {
+                    editProduct.PhotoByte = editedProduct.PhotoByte;
                     editProduct.Title = editedProduct.Title;
                     editProduct.Manufacturer = editedProduct.Manufacturer;
                     editProduct.Active = editedProduct.Active;
@@ -62,7 +66,23 @@ namespace Salon_Krasot.Windows_Product_Mahinations
 
         private void btn_image_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.png, *.jpg, *.jpeg, *.gif, *.bmp)|*.png;*.jpg;*.jpeg;*.gif;*.bmp";
 
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                byte[] photoBytes = File.ReadAllBytes(filePath);
+
+                var editedProduct = (Product_Card)DataContext;
+                editedProduct.PhotoByte = photoBytes;
+
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = new MemoryStream(photoBytes);
+                bitmapImage.EndInit();
+                product_image.Source = bitmapImage;
+            }
         }
     }
 }

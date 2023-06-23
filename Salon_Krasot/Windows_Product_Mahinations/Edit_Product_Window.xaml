@@ -46,7 +46,7 @@
 
         <StackPanel Grid.Row="0">
             <Border  Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0" BorderThickness="2" BorderBrush="#FFFF4A6D">
-                <Image Source="{Binding Photo}" />
+                <Image x:Name="product_image" Source="{Binding Photo}" />
             </Border>
             <Button x:Name="btn_image" Content="Изменить фотографию" Margin="65,20,0,0" Click="btn_image_Click" Background="#FFFF4A6D" />
         </StackPanel>

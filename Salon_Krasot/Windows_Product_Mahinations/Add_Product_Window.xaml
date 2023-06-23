@@ -25,17 +25,21 @@
 
         <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,45,0,0">
             <TextBlock Text="Имя товара" FontSize="20" FontFamily="Tahoma" Width="120"  HorizontalAlignment="Left"/>
-            <TextBox Text="{Binding Title}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40"  BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <TextBox x:Name="title_tb" Text="{Binding Title}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40"  BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
             <TextBlock Text="Изготовитель товара" FontSize="20" FontFamily="Tahoma" Width="130"  HorizontalAlignment="Left"/>
-            <TextBox Text="{Binding Manufacturer}"  FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <TextBox x:Name="manufacturer_tb" Text="{Binding Manufacturer}"  FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40" BorderThickness="2" BorderBrush="Black" Background="#FFE1E4FF"/>
+            <CheckBox x:Name="active_cb" Content="Активен\Неактивен" FontFamily="Tahoma" FontSize="20" />
             <TextBlock Text="Цена товара" FontSize="20" FontFamily="Tahoma" Width="130"  HorizontalAlignment="Left"/>
-            <TextBox Text="{Binding Price}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40"  BorderThickness="2" BorderBrush="#FF000000" Background="#FFE1E4FF"/>
-            <CheckBox Content="Активен\Неактивен" FontFamily="Tahoma" FontSize="20" />
+            <TextBox x:Name="price_tb" Text="{Binding Price}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="40"  BorderThickness="2" BorderBrush="#FF000000" Background="#FFE1E4FF"/>
+            <TextBlock Text="Описание товара" FontSize="20" FontFamily="Tahoma" Width="200" HorizontalAlignment="Left"/>
+            <Border BorderThickness="2" BorderBrush="Black" Width="300" HorizontalAlignment="Left" Height="Auto">
+                <TextBox x:Name="descrip_tb" Text="{Binding Description}" FontSize="20" FontFamily="Tahoma" HorizontalAlignment="Left" Width="300" Height="Auto" Background="#FFE1E4FF" />
+            </Border>
         </StackPanel>
 
         <StackPanel Grid.Row="0">
             <Border  Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0" BorderThickness="2" BorderBrush="Black">
-                <Image Source="{Binding Photo}" />
+                <Image x:Name="photo_im" Source="{Binding PhotoByte}" />
             </Border>
             <Button x:Name="btn_image" Content="Добавить фотографию" Margin="65,20,0,0" Click="btn_image_Click" Background="#FFFF4A6D" />
         </StackPanel>
@@ -43,6 +47,5 @@
         <Button Grid.Column="1" Grid.Row="1" Content="Добавить товар" Margin="10" x:Name="btn_add_product" Click="btn_add_product_Click" Background="#FFFF4A6D"/>
 
 
-        <!--окна карточки с кнопками редактирования и удаления и просмотра истории автоматически в виде листобкса-->
     </Grid>
 </Window>

@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Application_Menu"
         mc:Ignorable="d"
         Title="Карточка товара" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <local:PhotoConverter x:Key="PhotoConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
@@ -22,7 +25,14 @@
         </Button>
 
         <Border Grid.Column="0" Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0" BorderThickness="2" BorderBrush="#FFFF4A6D">
-            <Image Source="{Binding Photo}"/>
+            <Image Width="200" Height="200">
+                <Image.Source>
+                    <MultiBinding Converter="{StaticResource PhotoConverter}">
+                        <Binding Path="PhotoByte"/>
+                        <Binding Path="Photo"/>
+                    </MultiBinding>
+                </Image.Source>
+            </Image>
         </Border>
 
         <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,45,0,0">
