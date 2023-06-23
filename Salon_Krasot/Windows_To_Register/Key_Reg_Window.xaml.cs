@@ -39,7 +39,9 @@ namespace Salon_Krasot.Windows_To_Register
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
             this.Close();
+            mainWindow.Show();
         }
     }
 }
