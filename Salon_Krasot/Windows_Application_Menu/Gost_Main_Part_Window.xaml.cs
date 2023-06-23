@@ -35,13 +35,14 @@ namespace Salon_Krasot.Windows_Application_Menu
 
         private void LoadProducts()
         {
-            Products = new ObservableCollection<Product_Card>(dbContext.Products_Cards.ToList());
-            
-            foreach (var photo in Products)
+            var allProducts = dbContext.Products_Cards.ToList();
+            var activeProducts = allProducts.Where(p => p.Active).ToList();
+            foreach (var photo in activeProducts)
             {
                 photo.Photo = $"pack://application:,,,/{photo.Photo}";
-                //Фотографии не выводятся(
             }
+            Products = new ObservableCollection<Product_Card>(activeProducts);
+
         }
 
         private void btn_choose_Click(object sender, RoutedEventArgs e)
@@ -65,7 +66,7 @@ namespace Salon_Krasot.Windows_Application_Menu
         private void Search_tb_TextChanged(object sender, TextChangedEventArgs e)
         {
             string searchText = Search_tb.Text.ToLower();
-            var searchProducts = dbContext.Products_Cards.Where(p => p.Title.ToLower().Contains(searchText)).ToList();
+            var searchProducts = dbContext.Products_Cards.Where(p => p.Active && p.Title.ToLower().Contains(searchText)).ToList();
             Products = new ObservableCollection<Product_Card>(searchProducts);
             Katalog_lb.ItemsSource = Products;
         }

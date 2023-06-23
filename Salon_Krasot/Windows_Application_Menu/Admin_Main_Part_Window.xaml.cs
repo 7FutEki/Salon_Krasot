@@ -48,7 +48,6 @@ namespace Salon_Krasot.Windows_Application_Menu
             foreach (var photo in Products)
             {
                 photo.Photo = $"pack://application:,,,/{photo.Photo}";
-                //Фотографии не выводятся(
             }
         }
 
