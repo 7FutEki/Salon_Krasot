@@ -26,6 +26,19 @@
                 </Button.Background>
             </Button>
             <TextBox x:Name="Search_tb" TextChanged="Search_tb_TextChanged" Width="200" Margin="0,0,5,0" VerticalAlignment="Center" FontFamily="Tahoma"/>
+            <ComboBox x:Name="combobox" Width="200" SelectionChanged="combobox_SelectionChanged">
+                <TextBlock Text="Убрать фильтр"/>
+                <TextBlock Text="По возрастанию"/>
+                <TextBlock Text="По убыванию"/>
+                <TextBlock Text="Weleda" x:Name="tb_weleda"/>
+                <TextBlock Text="ANDALOU" x:Name="tb_andalou"/>
+                <TextBlock Text="Blue Beautifly" x:Name="tb_blue"/>
+                <TextBlock Text="AMSARVEDA" x:Name="tb_amsarveda"/>
+                <TextBlock Text="MATSESTA" x:Name="tb_matsesta"/>
+                <TextBlock Text="BIOSelect" x:Name="tb_bio"/>
+                <TextBlock Text="DIONY" x:Name="tb_diony"/>
+                <TextBlock Text="Natura Botanica" x:Name="tb_natura"/>
+            </ComboBox>
         </StackPanel>
 
         <ListBox x:Name="Katalog_lb" Grid.Row="1" Margin="10,10,10,10" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" Grid.ColumnSpan="2" Background="#FFE1E4FF">

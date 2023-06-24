@@ -34,22 +34,26 @@ namespace Salon_Krasot.Windows_Application_Menu
 
         private void btn_add_to_basket_Click(object sender, RoutedEventArgs e)
         {
-            var logins = dbContext.ForLogin.ToList();
-            string login = logins.Last().Login;
-
-
-            Basket_Product_Cards basket_Product_Cards = new Basket_Product_Cards()
-            {
-                Login = login,
-                Title = product2.Title
-            };
-
-            dbContext.Basket_Product_Cards.Add(basket_Product_Cards);
-            dbContext.SaveChanges();
+            Dop_Products_Window dop_Products_Window = new Dop_Products_Window(product2);
+            dop_Products_Window.ShowDialog();
             
-            User_Main_Part_Window user_Main_Part_Window = new User_Main_Part_Window();
-            Close();
-            user_Main_Part_Window.ShowDialog();
+                var logins = dbContext.ForLogin.ToList();
+                string login = logins.Last().Login;
+
+
+                Basket_Product_Cards basket_Product_Cards = new Basket_Product_Cards()
+                {
+                    Login = login,
+                    Title = product2.Title
+                };
+
+                dbContext.Basket_Product_Cards.Add(basket_Product_Cards);
+                dbContext.SaveChanges();
+
+                User_Main_Part_Window user_Main_Part_Window = new User_Main_Part_Window();
+                Close();
+                user_Main_Part_Window.ShowDialog();
+            
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)

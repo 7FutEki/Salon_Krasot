@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -70,5 +71,86 @@ namespace Salon_Krasot.Windows_Application_Menu
             Products = new ObservableCollection<Product_Card>(searchProducts);
             Katalog_lb.ItemsSource = Products;
         }
+        
+
+        private void Filter() 
+        {
+            List<Product_Card> list = Products.ToList();
+            switch (combobox.SelectedIndex)
+            {
+                case 0:
+                    {
+                        list = list;
+                    }
+                    break;
+                case 1:
+                    {
+                        list.Sort((x, y) => x.Price.CompareTo(y.Price));
+                    }
+                    break;
+                case 2:
+                    {
+                        list.Sort((x, y) => x.Price.CompareTo(y.Price));
+                        list.Reverse();
+                    }
+                    break;
+                case 3:
+                    {
+                        var s = list.Where(x => x.Manufacturer == tb_weleda.Text);
+                        list = s.ToList();
+                    }
+                    break;
+                case 4:
+                    {
+                        var s = list.Where(x => x.Manufacturer == tb_andalou.Text);
+                        list = s.ToList();
+                    }
+                    break;
+                case 5:
+                    {
+                        var s = list.Where(x => x.Manufacturer == tb_blue.Text);
+                        list = s.ToList();
+                    }
+                    break;
+                case 6:
+                    {
+                        var s = list.Where(x => x.Manufacturer == tb_amsarveda.Text);
+                        list = s.ToList();
+                    }
+                    break;
+                case 7:
+                    {
+                        var s = list.Where(x => x.Manufacturer == tb_matsesta.Text);
+                        list = s.ToList();
+                    }
+                    break;
+                case 8:
+                    {
+                        var s = list.Where(x => x.Manufacturer == tb_bio.Text);
+                        list = s.ToList();
+                    }
+                    break;
+                case 9:
+                    {
+                        var s = list.Where(x => x.Manufacturer == tb_diony.Text);
+                        list = s.ToList();
+                    }
+                    break;
+                case 10:
+                    {
+                        var s = list.Where(x => x.Manufacturer == tb_natura.Text);
+                        list = s.ToList();
+                    }
+                    break;
+            }
+            Katalog_lb.ItemsSource = list;
+        }
+
+        private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Filter();
+        }
+
+        
     }
 }
