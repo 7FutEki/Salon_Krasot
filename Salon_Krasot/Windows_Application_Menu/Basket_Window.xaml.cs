@@ -63,18 +63,7 @@ namespace Salon_Krasot.Windows_Application_Menu
 
 
 
-                //foreach (var item in basket_Product_Cards)
-                //{
-                //    var s = db.Products_Cards.Where(y => y.Title == item.Title);
-                //    foreach (var card in s)
-                //    {
-                //        ba.Add(card);
-                //    }
-                //    //var s = db.Products_Cards.Where(y => y.Title == item.Title).ToList();
-
-                //    //Basket_lb.Items.Add(ba);
-                //    Basket_lb.Items.Add(ba);
-                //}
+                
 
 
 

@@ -61,12 +61,7 @@ namespace Salon_Krasot.Windows_Application_Menu
             }
         }
 
-        private void btn_story_Click(object sender, RoutedEventArgs e)
-        {
-            Product_Story_Window product_Story_Window = new Product_Story_Window();
-            Close();
-            product_Story_Window.ShowDialog();
-        }
+        
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {

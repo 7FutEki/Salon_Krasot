@@ -28,6 +28,37 @@ namespace Salon_Krasot.Windows_Product_Mahinations
         {
             InitializeComponent();
             DataContext = editProduct;
+            LoadPhoto(editProduct);
+        }
+        private void LoadPhoto(Product_Card product_Card)
+        {
+            using (var db = new ApplicationContext())
+            {
+                var s = db.Products_Cards.Where(x=>x.Title == product_Card.Title).ToList();
+                foreach (var item in s)
+                {
+                    if (product_Card.Photo != null)
+                    {
+
+                        if (item.PhotoByte == null)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            BitmapImage bitmapImage = new BitmapImage();
+                            bitmapImage.BeginInit();
+                            bitmapImage.StreamSource = new MemoryStream(item.PhotoByte);
+                            bitmapImage.EndInit();
+                            product_image.Source = bitmapImage;
+                        }
+                    }
+                    else
+                    {
+                        product_Card.Photo = $"pack://application:,,,/{item.Photo}";
+                    }
+                }
+            }
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
@@ -35,7 +66,6 @@ namespace Salon_Krasot.Windows_Product_Mahinations
             Product_Main_Window product_Main = new Product_Main_Window((Product_Card)DataContext);
             Close();
             product_Main.Show();
-            ///переделать, работает криво
         }
 
         private void btn_add_product_Click(object sender, RoutedEventArgs e)

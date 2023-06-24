@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Product_Maxinations"
         mc:Ignorable="d"
-        Title="Добавление товара" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Добавление товара" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="\beauty_logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>

@@ -17,6 +17,8 @@ using Salon_Krasot.Windows_Profiles;
 using Salon_Krasot.Windows_To_Register;
 using Salon_Krasot.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
+using System.IO;
 
 namespace Salon_Krasot
 {
@@ -25,15 +27,16 @@ namespace Salon_Krasot
     /// </summary>
     public partial class MainWindow : Window
     {
+        ApplicationContext db { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            ApplicationContext db = new ApplicationContext();
+            db = new ApplicationContext();
             db.Database.Migrate();
             this.KeyDown += authorization_btn_KeyDown;
 
         }
-
+       
         private void reg_admin_btn_Click(object sender, RoutedEventArgs e)
         {
             Key_Reg_Window key_Reg_Window = new Key_Reg_Window();

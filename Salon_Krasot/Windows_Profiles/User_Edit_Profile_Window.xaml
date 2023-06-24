@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Profiles"
         mc:Ignorable="d"
-        Title="Редактирование профиля" Height="500" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Редактирование профиля" Height="500" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="\beauty_logo.png">
+
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="220"/>
