@@ -7,7 +7,7 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         mc:Ignorable="d"
          ui:WindowHelper.UseModernWindowStyle="True"
-        Height="480"  Icon="\beauty_logo.png" Width="380"  Title="Вход" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Height="480"  Icon="\beauty_logo.png" Width="380"  Title="Вход" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

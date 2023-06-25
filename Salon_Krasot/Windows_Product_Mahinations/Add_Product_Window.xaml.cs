@@ -86,25 +86,25 @@ namespace Salon_Krasot.Windows_Product_Maxinations
         }
         
         
-        private void btn_image_Click(object sender, RoutedEventArgs e)
-        {
-            Product_Card product_Card = new Product_Card();
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.jpg, *.png, *.jpeg)|*.jpg;*.png;*.jpeg";
-            if (openFileDialog.ShowDialog() == true)
-            {
-                string imagePath = openFileDialog.FileName;
-                byte[] imageData = File.ReadAllBytes(imagePath);
-                product_Card.PhotoByte = imageData;
+        //private void btn_image_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Product_Card product_Card = new Product_Card();
+        //    OpenFileDialog openFileDialog = new OpenFileDialog();
+        //    openFileDialog.Filter = "Image Files (*.jpg, *.png, *.jpeg)|*.jpg;*.png;*.jpeg";
+        //    if (openFileDialog.ShowDialog() == true)
+        //    {
+        //        string imagePath = openFileDialog.FileName;
+        //        byte[] imageData = File.ReadAllBytes(imagePath);
+        //        product_Card.PhotoByte = imageData;
 
-                BitmapImage bitmapImage = new BitmapImage();
-                bitmapImage.BeginInit();
-                bitmapImage.StreamSource = new MemoryStream(imageData);
-                bitmapImage.EndInit();
-                photo_im.Source = bitmapImage;
+        //        BitmapImage bitmapImage = new BitmapImage();
+        //        bitmapImage.BeginInit();
+        //        bitmapImage.StreamSource = new MemoryStream(imageData);
+        //        bitmapImage.EndInit();
+        //        photo_im.Source = bitmapImage;
                 
-            }
-        }
+        //    }
+        //}
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {

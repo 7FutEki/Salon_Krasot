@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Application_Menu"
         mc:Ignorable="d"
-        Title="Карточка товара" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="\beauty_logo.png">
+        Title="Карточка товара" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="\beauty_logo.png">
     <Window.Resources>
         <local:PhotoConverter x:Key="PhotoConverter"/>
     </Window.Resources>

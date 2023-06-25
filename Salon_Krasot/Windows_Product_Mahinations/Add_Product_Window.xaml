@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salon_Krasot.Windows_Product_Maxinations"
         mc:Ignorable="d"
-        Title="Добавление товара" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="\beauty_logo.png">
+        Title="Добавление товара" Height="450" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"  Icon="\beauty_logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
@@ -41,7 +41,6 @@
             <Border  Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0" BorderThickness="2" BorderBrush="Black">
                 <Image x:Name="photo_im" Source="{Binding PhotoByte}" />
             </Border>
-            <Button x:Name="btn_image" Content="Добавить фотографию" Margin="65,20,0,0" Click="btn_image_Click" Background="#FFFF4A6D" />
         </StackPanel>
 
         <Button Grid.Column="1" Grid.Row="1" Content="Добавить товар" Margin="10" x:Name="btn_add_product" Click="btn_add_product_Click" Background="#FFFF4A6D"/>

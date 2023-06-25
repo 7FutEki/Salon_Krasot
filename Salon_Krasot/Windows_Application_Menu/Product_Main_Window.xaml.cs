@@ -52,7 +52,7 @@ namespace Salon_Krasot.Windows_Application_Menu
                     context.Products_Cards.Remove(productDelete);
                     context.SaveChanges();
 
-                    MessageBox.Show("Продукт успешно удален из базы данных.");
+                    MessageBox.Show("Товар успешно удален из базы данных.");
                 }
                 Admin_Main_Part_Window window = new Admin_Main_Part_Window();
                 Close();
